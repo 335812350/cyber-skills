@@ -4,7 +4,7 @@
 
 # 🧰 Cyber Skills
 
-#### 我整理和使用的一些 AI 技能和 Prompt，统一放在这里
+#### 我整理和使用的一些 Skills 和 Prompt，统一放在这里
 
 [![License](https://img.shields.io/badge/License-MIT-3B82F6?style=for-the-badge)](./LICENSE)
 [![Skills](https://img.shields.io/badge/Skills-4-10B981?style=for-the-badge)](#-skills)
