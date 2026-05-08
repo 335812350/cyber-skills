@@ -2,13 +2,13 @@
 
 [中文](./README.md) · **English**
 
-# 🧰 Khazix Skills
+# 🧰 Cyber Skills
 
-#### A few AI skills and prompts I actually use every day, open-sourced as-is
+#### A collection of AI skills and prompts I organize and use
 
 [![License](https://img.shields.io/badge/License-MIT-3B82F6?style=for-the-badge)](./LICENSE)
-[![Skills](https://img.shields.io/badge/Skills-3-10B981?style=for-the-badge)](#-skills)
-[![Prompts](https://img.shields.io/badge/Prompts-1-F59E0B?style=for-the-badge)](#-prompts)
+[![Skills](https://img.shields.io/badge/Skills-4-10B981?style=for-the-badge)](#-skills)
+[![Prompts](https://img.shields.io/badge/Prompts-2-F59E0B?style=for-the-badge)](#-prompts)
 [![AgentSkills](https://img.shields.io/badge/AgentSkills-Standard-8B5CF6?style=for-the-badge)](https://agentskills.io)
 
 ![Claude Code](https://img.shields.io/badge/Claude_Code-Skill-D97706?style=flat-square&logo=anthropic&logoColor=white)
@@ -18,7 +18,7 @@
 
 </div>
 
-Each one was running in my own projects long enough to prove it actually saves time before I bothered open-sourcing it. No hype — just a few useful things.
+This repository collects Skills and Prompts I use for AI-assisted work. Some entries are from original creators and some are my own working notes; entries that belong to an original creator are marked in their descriptions.
 
 - **Skills** — Structured instruction sets that agents load directly. Follows the [Agent Skills](https://agentskills.io) open standard. Works with Claude Code, Codex, OpenCode, and OpenClaw
 - **Prompts** — A single block of text you paste into ChatGPT / Claude / Gemini / any chat. No installation needed
@@ -29,17 +29,19 @@ Each one was running in my own projects long enough to prove it actually saves t
 
 ### Skills
 
-| Name | One-liner | Article |
+| Name | One-liner | Notes |
 |---|---|---|
-| 🧹 [**neat-freak**](#-neat-freak) | After a session, run `/neat` to reconcile your project docs, CLAUDE.md, and agent memory with the code | [Article (Chinese)](https://mp.weixin.qq.com/s/tg1wd-iN2gWHWhXdY0faeg) |
-| 🔭 [**hv-analysis**](#-hv-analysis) | Drop a product/company/concept into it and get a 10k–30k word PDF research report | [Article (Chinese)](https://mp.weixin.qq.com/s/Y_uRMYBmdLWUPnz_ac7jWA) |
-| ✍️ [**khazix-writer**](#-khazix-writer) | Makes the agent write long-form Chinese articles in my personal voice | [Article (Chinese)](https://mp.weixin.qq.com/s/AtxGrii_K-nzkwUM9SNhEg) |
+| 🧹 [**neat-freak**](#-neat-freak) | After a session, run `/neat` to reconcile your project docs, CLAUDE.md, and agent memory with the code | Original: 数字生命卡兹克 · [Article (Chinese)](https://mp.weixin.qq.com/s/tg1wd-iN2gWHWhXdY0faeg) |
+| 🔭 [**hv-analysis**](#-hv-analysis) | Drop a product/company/concept into it and get a 10k–30k word PDF research report | Original: 数字生命卡兹克 · [Article (Chinese)](https://mp.weixin.qq.com/s/Y_uRMYBmdLWUPnz_ac7jWA) |
+| ✍️ [**khazix-writer**](#-khazix-writer) | Makes the agent write long-form Chinese articles in the voice of 数字生命卡兹克 | Original: 数字生命卡兹克 · [Article (Chinese)](https://mp.weixin.qq.com/s/AtxGrii_K-nzkwUM9SNhEg) |
+| 🧭 [**find-skills**](#-find-skills) | Helps the agent search, vet, and recommend skills from the open ecosystem | Skill |
 
 ### Prompts
 
-| Name | One-liner | Article |
+| Name | One-liner | Notes |
 |---|---|---|
-| 🔭 [**hv-analysis (Prompt edition)**](#-hv-analysis-prompt-edition) | Lighter version of the skill above — paste it into any Deep Research model | [Article (Chinese)](https://mp.weixin.qq.com/s/Y_uRMYBmdLWUPnz_ac7jWA) |
+| 🔭 [**hv-analysis (Prompt edition)**](#-hv-analysis-prompt-edition) | Lighter version of the skill above — paste it into any Deep Research model | Original: 数字生命卡兹克 · [Article (Chinese)](https://mp.weixin.qq.com/s/Y_uRMYBmdLWUPnz_ac7jWA) |
+| 🧰 [**Codex project development system prompt**](#-codex-project-development-system-prompt) | Adds a plan-review-implement workflow for larger Codex coding tasks | [Prompt](./prompts/codex项目开发系统提示词.md) |
 
 ---
 
@@ -48,10 +50,10 @@ Each one was running in my own projects long enough to prove it actually saves t
 In any agent that supports Skills (Claude Code, Codex, OpenClaw…), just say:
 
 ```
-Install this skill: https://github.com/KKKKhazix/khazix-skills/tree/main/<skill-name>
+Install this skill: https://github.com/335812350/cyber-skills/tree/main/<skill-name>
 ```
 
-Replace `<skill-name>` with the one you want — e.g. `neat-freak`, `hv-analysis`, `khazix-writer`. The agent will clone it into the right directory for you.
+Replace `<skill-name>` with the one you want — e.g. `neat-freak`, `hv-analysis`, `khazix-writer`, `find-skills`. The agent will clone it into the right directory for you.
 
 ---
 
@@ -63,6 +65,8 @@ Replace `<skill-name>` with the one you want — e.g. `neat-freak`, `hv-analysis
 <tr><td>
 
 ### 🧹 neat-freak
+
+> Original: 数字生命卡兹克. The description below is adapted from the original public introduction.
 
 > *"If I don't run /neat before closing the window, I get itchy. Like there's something stuck in my throat."*
 
@@ -80,7 +84,7 @@ The agent isn't getting dumber — your docs and memory are. neat-freak's job is
 - Project docs/ and README (read by teammates and downstream developers)
 - The agent's own memory system (read by future you across sessions)
 
-These three layers have different audiences and don't overlap. That's exactly why I wasn't satisfied with Claude Code's AutoDream — it only touched memory, leaving the docs to rot.
+These three layers have different audiences and don't overlap. That's exactly why the original author wasn't satisfied with Claude Code's AutoDream — it only touched memory, leaving the docs to rot.
 
 **How to trigger**
 
@@ -105,6 +109,8 @@ tidy up docs     # natural language
 <tr><td>
 
 ### 🔭 hv-analysis (Horizontal-Vertical Analysis)
+
+> Original: 数字生命卡兹克. The description below is adapted from the original public introduction.
 
 > *"Vertical axis chases time depth, horizontal axis chases simultaneous breadth. They cross to give you the verdict."*
 
@@ -138,15 +144,17 @@ The output is a **typeset PDF research report**, 10,000–30,000 words.
 
 ### ✍️ khazix-writer
 
+> Original: 数字生命卡兹克. The description below is adapted from the original public introduction.
+
 > *"A knowledgeable normal person earnestly talking about something that moved them."*
 
-The writing skill behind my own Chinese long-form articles. Once installed, the agent writes in **my voice, my rhythm, with my list of banned phrases** baked in.
+The writing skill behind 数字生命卡兹克's Chinese long-form articles. Once installed, the agent tries to write in **his voice, rhythm, and list of banned phrases**.
 
 > ⚠️ **Note for English readers**: This skill produces **Chinese** long-form articles (公众号 / WeChat-style). If your output language is English, this isn't for you. But you might find the methodology interesting as a reference for how to encode a personal voice into a skill.
 
 **Good for**
 
-You've read my Chinese articles, like the style, and want your AI to write in the same voice. Hand it a PDF, a transcript, or a news link — it'll turn it into a long-form piece.
+You've read his Chinese articles, like the style, and want your AI to write in the same voice. Hand it a PDF, a transcript, or a news link — it'll turn it into a long-form piece.
 
 **Not good for**
 
@@ -168,6 +176,34 @@ You want "good general writing." This skill takes a position. It **refuses** cor
 
 ---
 
+<table>
+<tr><td>
+
+### 🧭 find-skills
+
+> *"When you don't know which Skill to install, let it search the ecosystem first."*
+
+A skill that helps agents discover, evaluate, and install useful skills from the open skills ecosystem.
+
+**Good for**
+
+- Checking whether an existing Skill already covers a task
+- Searching by keywords like React, testing, deployment, or docs
+- Having the agent evaluate candidates before recommending an install
+
+**What it does**
+
+- Checks the [skills.sh](https://skills.sh/) leaderboard first
+- Runs `npx skills find <query>` for targeted searches
+- Filters candidates by install count, source reputation, and GitHub stars
+- Returns install commands and links for follow-up reading
+
+→ [SKILL.md](./find-skills/SKILL.md) · [skills.sh](https://skills.sh/)
+
+</td></tr>
+</table>
+
+---
 ## 📝 Prompts
 
 <a id="-prompts"></a>
@@ -176,6 +212,8 @@ You want "good general writing." This skill takes a position. It **refuses** cor
 <tr><td>
 
 ### 🔭 hv-analysis (Prompt edition)
+
+> Original: 数字生命卡兹克. The description below is adapted from the original public introduction.
 
 A **lighter version** of the hv-analysis skill above — a single prompt you paste into any Deep Research model (ChatGPT Deep Research, Gemini Deep Research, Grok Deep Search, Claude Research). No installation required.
 
@@ -188,13 +226,29 @@ Good for people who haven't picked up Claude Code / Codex yet but still want to 
 </td></tr>
 </table>
 
+<table>
+<tr><td>
+
+### 🧰 Codex project development system prompt
+
+A system prompt for Codex-based project development. It turns larger tasks into a fixed workflow: plan first, review with Codex, revise feasibility, then implement.
+
+It asks the agent to detect large tasks, create `./md/plan-{feature}-{date}.md`, run a non-interactive Codex review, revise into an executable Plan v2, break implementation down to file / class / method-level To-Dos, and then produce implementation and review records after coding.
+
+Useful when you want stronger engineering guardrails around complex project changes instead of letting the agent jump straight into code.
+
+→ [codex项目开发系统提示词.md](./prompts/codex项目开发系统提示词.md)
+
+</td></tr>
+</table>
+
 ---
 
 ## 🌟 About
 
-I'm Khazix (数字生命卡兹克). Founder of Virxact. Background in visual communication design, with stints in user research and interaction design — **I'm not a programmer**. My day job is translating AI into things normal people can actually understand and use.
+I'm 赛博包工头. My WeChat public account is 「赛博包工头」.
 
-These skills are what I personally use every day. If they help you, a ⭐ is appreciated. Questions or suggestions welcome in Issues / Discussions.
+This repository collects Skills and Prompts I use for AI-assisted work. Entries that belong to original creators are marked in their own sections. If they help you, a ⭐ is appreciated. Questions or suggestions welcome in Issues / Discussions.
 
 ---
 
@@ -202,6 +256,6 @@ These skills are what I personally use every day. If they help you, a ⭐ is app
 
 [MIT License](./LICENSE) · Free to use, modify, and redistribute
 
-Made by [@KKKKhazix](https://github.com/KKKKhazix)
+Made by 赛博包工头
 
 </div>

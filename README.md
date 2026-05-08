@@ -2,13 +2,13 @@
 
 **中文** · [English](./README.en.md)
 
-# 🧰 Khazix Skills
+# 🧰 Cyber Skills
 
-#### 我自己每天在用的一些 AI 技能和 Prompt，都开源在这里
+#### 我整理和使用的一些 AI 技能和 Prompt，统一放在这里
 
 [![License](https://img.shields.io/badge/License-MIT-3B82F6?style=for-the-badge)](./LICENSE)
-[![Skills](https://img.shields.io/badge/Skills-3-10B981?style=for-the-badge)](#-skills)
-[![Prompts](https://img.shields.io/badge/Prompts-1-F59E0B?style=for-the-badge)](#-prompts)
+[![Skills](https://img.shields.io/badge/Skills-4-10B981?style=for-the-badge)](#-skills)
+[![Prompts](https://img.shields.io/badge/Prompts-2-F59E0B?style=for-the-badge)](#-prompts)
 [![AgentSkills](https://img.shields.io/badge/AgentSkills-Standard-8B5CF6?style=for-the-badge)](https://agentskills.io)
 
 ![Claude Code](https://img.shields.io/badge/Claude_Code-Skill-D97706?style=flat-square&logo=anthropic&logoColor=white)
@@ -18,7 +18,7 @@
 
 </div>
 
-都是在自己项目里跑通了一段时间，确实省事，才搬出来开源的。没什么花活，就是几个挺实用的东西。
+这个仓库用来整理我在 AI 协作开发里常用的 Skills 和 Prompts。部分内容来自原作者，部分是自用沉淀；属于原作者的条目会在对应说明里明确标注。
 
 - **Skills** — Agent 能直接加载的结构化指令集，遵循 [Agent Skills](https://agentskills.io) 开放标准。Claude Code、Codex、OpenCode、OpenClaw 都能装
 - **Prompts** — 一段提示词，复制粘贴到 ChatGPT / Claude / Gemini 任何对话里就能用，不需要安装
@@ -29,17 +29,19 @@
 
 ### Skills
 
-| 名字 | 一句话 | 讲解 |
+| 名字 | 一句话 | 备注 |
 |---|---|---|
-| 🧹 [**neat-freak（洁癖）**](#-neat-freak洁癖) | 干完活跑一下 `/neat`，自动把你这次改的东西跟项目文档、CLAUDE.md、Agent 记忆全部对齐 | [公众号文章](https://mp.weixin.qq.com/s/tg1wd-iN2gWHWhXdY0faeg) |
-| 🔭 [**hv-analysis（横纵分析法）**](#-hv-analysis横纵分析法) | 想搞懂一个产品/公司/概念是怎么回事，丢给它，给你一份万字 PDF 研究报告 | [公众号文章](https://mp.weixin.qq.com/s/Y_uRMYBmdLWUPnz_ac7jWA) |
-| ✍️ [**khazix-writer（卡兹克写作）**](#-khazix-writer卡兹克写作) | 装上之后，Agent 用我的口吻和节奏写公众号长文 | [公众号文章](https://mp.weixin.qq.com/s/AtxGrii_K-nzkwUM9SNhEg) |
+| 🧹 [**neat-freak（洁癖）**](#-neat-freak洁癖) | 干完活跑一下 `/neat`，自动把你这次改的东西跟项目文档、CLAUDE.md、Agent 记忆全部对齐 | 原作：数字生命卡兹克 · [公众号文章](https://mp.weixin.qq.com/s/tg1wd-iN2gWHWhXdY0faeg) |
+| 🔭 [**hv-analysis（横纵分析法）**](#-hv-analysis横纵分析法) | 想搞懂一个产品/公司/概念是怎么回事，丢给它，给你一份万字 PDF 研究报告 | 原作：数字生命卡兹克 · [公众号文章](https://mp.weixin.qq.com/s/Y_uRMYBmdLWUPnz_ac7jWA) |
+| ✍️ [**khazix-writer（卡兹克写作）**](#-khazix-writer卡兹克写作) | 装上之后，Agent 按数字生命卡兹克的口吻和节奏写公众号长文 | 原作：数字生命卡兹克 · [公众号文章](https://mp.weixin.qq.com/s/AtxGrii_K-nzkwUM9SNhEg) |
+| 🧭 [**find-skills（技能发现）**](#-find-skills技能发现) | 不知道该装哪个 Skill 时，让 Agent 先去开放生态里帮你找、筛、推荐 | Skill |
 
 ### Prompts
 
-| 名字 | 一句话 | 讲解 |
+| 名字 | 一句话 | 备注 |
 |---|---|---|
-| 🔭 [**横纵分析法（Prompt 版）**](#-横纵分析法prompt-版) | 上面那个 Skill 的轻量版，复制粘贴到任何 Deep Research 模型里就能跑 | [公众号文章](https://mp.weixin.qq.com/s/Y_uRMYBmdLWUPnz_ac7jWA) |
+| 🔭 [**横纵分析法（Prompt 版）**](#-横纵分析法prompt-版) | 上面那个 Skill 的轻量版，复制粘贴到任何 Deep Research 模型里就能跑 | 原作：数字生命卡兹克 · [公众号文章](https://mp.weixin.qq.com/s/Y_uRMYBmdLWUPnz_ac7jWA) |
+| 🧰 [**Codex 项目开发系统提示词**](#-codex-项目开发系统提示词) | 给 Codex 项目开发加一套“大型任务先规划、评审、再实现”的流程约束 | [Prompt](./prompts/codex项目开发系统提示词.md) |
 
 ---
 
@@ -48,10 +50,10 @@
 在 Claude Code、Codex、OpenClaw 等支持 Skill 的 Agent 里，直接说：
 
 ```
-帮我安装这个 skill：https://github.com/KKKKhazix/khazix-skills/tree/main/<skill-name>
+帮我安装这个 skill：https://github.com/335812350/cyber-skills/tree/main/<skill-name>
 ```
 
-把 `<skill-name>` 换成你想装的那个，比如 `neat-freak`、`hv-analysis`、`khazix-writer`。Agent 会自己 clone 到对应目录，不用你操心路径。
+把 `<skill-name>` 换成你想装的那个，比如 `neat-freak`、`hv-analysis`、`khazix-writer`、`find-skills`。Agent 会自己 clone 到对应目录，不用你操心路径。
 
 ---
 
@@ -63,6 +65,8 @@
 <tr><td>
 
 ### 🧹 neat-freak（洁癖）
+
+> 原作：数字生命卡兹克。以下说明基于原作者公开介绍整理。
 
 > *"每次任务做完要退出窗口的时候，如果不跑一遍 /neat，我就浑身难受，如坐针毡如芒刺背如鲠在喉。"*
 
@@ -80,7 +84,7 @@
 - 项目的 docs/ 和 README（给同事和其他人看的）
 - Agent 自己的记忆系统（给跨会话的自己看的）
 
-这三层受众不同，职责不重叠，得分别处理。这也是我当时不满意 Claude Code 那个 AutoDream 的原因——它只动记忆，不动文档。
+这三层受众不同，职责不重叠，得分别处理。这也是原作者当时不满意 Claude Code 那个 AutoDream 的原因——它只动记忆，不动文档。
 
 **怎么触发**
 
@@ -105,6 +109,8 @@ sync up          # English
 <tr><td>
 
 ### 🔭 hv-analysis（横纵分析法）
+
+> 原作：数字生命卡兹克。以下说明基于原作者公开介绍整理。
 
 > *"纵向追时间深度，横向追同期广度，最终交汇出判断。"*
 
@@ -138,13 +144,15 @@ sync up          # English
 
 ### ✍️ khazix-writer（卡兹克写作）
 
+> 原作：数字生命卡兹克。以下说明基于原作者公开介绍整理。
+
 > *"有见识的普通人在认真聊一件打动他的事。"*
 
-我自己写公众号的那套写作 skill。装上之后，Agent 写出来的东西就是我的口吻、我的节奏、我的禁忌词全在里面。
+这是数字生命卡兹克用于公众号长文写作的 skill。装上之后，Agent 会尽量复刻他的口吻、节奏和禁忌词。
 
 **适合**
 
-你看过我公众号「数字生命卡兹克」的文章，觉得风格还行，想让你的 AI 也照着这个调子写东西。比如丢一篇 PDF / 一段语音转文字 / 一个新闻链接，让它写成长文。
+你看过他公众号「数字生命卡兹克」的文章，觉得风格还行，想让你的 AI 也照着这个调子写东西。比如丢一篇 PDF / 一段语音转文字 / 一个新闻链接，让它写成长文。
 
 **不适合**
 
@@ -166,6 +174,34 @@ sync up          # English
 
 ---
 
+<table>
+<tr><td>
+
+### 🧭 find-skills（技能发现）
+
+> *"不知道该装哪个 Skill 的时候，先让它帮你找一圈。"*
+
+这是一个专门帮 Agent 在开放 Skill 生态里发现、筛选和安装合适技能的 Skill。
+
+**适合**
+
+- 想知道某个任务有没有现成 Skill
+- 想按 React、测试、部署、文档等关键词搜索 Skill
+- 想让 Agent 对候选 Skill 做质量判断，再给你安装建议
+
+**它会做什么**
+
+- 优先查看 [skills.sh](https://skills.sh/) 榜单
+- 用 `npx skills find <query>` 搜索相关 Skill
+- 根据安装量、来源声誉、GitHub stars 做基础筛选
+- 给出安装命令和学习链接
+
+→ [SKILL.md](./find-skills/SKILL.md) · [skills.sh](https://skills.sh/)
+
+</td></tr>
+</table>
+
+---
 ## 📝 Prompts
 
 <a id="-prompts"></a>
@@ -174,6 +210,8 @@ sync up          # English
 <tr><td>
 
 ### 🔭 横纵分析法（Prompt 版）
+
+> 原作：数字生命卡兹克。以下说明基于原作者公开介绍整理。
 
 上面那个 hv-analysis Skill 的**轻量版**——一段 prompt，复制粘贴到任何支持 Deep Research 的模型里就能跑（ChatGPT Deep Research、Gemini Deep Research、Grok Deep Search、Claude Research 都行），不需要安装任何东西。
 
@@ -186,13 +224,29 @@ sync up          # English
 </td></tr>
 </table>
 
+<table>
+<tr><td>
+
+### 🧰 Codex 项目开发系统提示词
+
+一段面向 Codex 项目开发的系统提示词，用来把大型任务固定成“方案先行 → Codex 评审 → 可行性校正 → 再实现”的流程。
+
+它会要求 Agent 先识别大型任务，创建 `./md/plan-{功能名称}-{日期}.md`，经过非交互 Codex review 和 Plan v2 修订后，再拆解到文件 / 类 / 方法级 To-Do，并在实现完成后生成实施文档和代码审查记录。
+
+适合需要更强工程约束的项目协作场景，避免 Agent 直接开写复杂需求，最后才发现方案不对。
+
+→ [codex项目开发系统提示词.md](./prompts/codex项目开发系统提示词.md)
+
+</td></tr>
+</table>
+
 ---
 
 ## 🌟 关于
 
-我是数字生命卡兹克，公众号「数字生命卡兹克」、虚实传媒（Virxact）创始人。视觉传达设计出身，做过用户研究和交互设计，**不是程序员**。
+我是赛博包工头，公众号「赛博包工头」。
 
-这些 skill 都是我自己每天在用的，开源出来如果对你有帮助，给个 ⭐ 就行。有问题或建议，欢迎在 Issues / Discussions 里说一声。
+这个仓库用来整理我在 AI 协作开发里常用的 Skills 和 Prompts。涉及原作者的内容，会在对应条目中标注；如果对你有帮助，给个 ⭐ 就行。有问题或建议，欢迎在 Issues / Discussions 里说一声。
 
 ---
 
@@ -200,6 +254,6 @@ sync up          # English
 
 [MIT License](./LICENSE) · 自由使用 / 修改 / 再分发
 
-Made by [@KKKKhazix](https://github.com/KKKKhazix)
+Made by 赛博包工头
 
 </div>
