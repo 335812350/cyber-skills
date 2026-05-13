@@ -7,7 +7,7 @@
 #### A collection of AI skills and prompts I organize and use
 
 [![License](https://img.shields.io/badge/License-MIT-3B82F6?style=for-the-badge)](./LICENSE)
-[![Skills](https://img.shields.io/badge/Skills-4-10B981?style=for-the-badge)](#-skills)
+[![Skills](https://img.shields.io/badge/Skills-5-10B981?style=for-the-badge)](#-skills)
 [![Prompts](https://img.shields.io/badge/Prompts-2-F59E0B?style=for-the-badge)](#-prompts)
 [![AgentSkills](https://img.shields.io/badge/AgentSkills-Standard-8B5CF6?style=for-the-badge)](https://agentskills.io)
 
@@ -34,6 +34,7 @@ This repository collects Skills and Prompts I use for AI-assisted work. Some ent
 | 🧹 [**neat-freak**](#-neat-freak) | After a session, run `/neat` to reconcile your project docs, CLAUDE.md, and agent memory with the code | Original: 数字生命卡兹克 · [Article (Chinese)](https://mp.weixin.qq.com/s/tg1wd-iN2gWHWhXdY0faeg) |
 | 🔭 [**hv-analysis**](#-hv-analysis) | Drop a product/company/concept into it and get a 10k–30k word PDF research report | Original: 数字生命卡兹克 · [Article (Chinese)](https://mp.weixin.qq.com/s/Y_uRMYBmdLWUPnz_ac7jWA) |
 | ✍️ [**khazix-writer**](#-khazix-writer) | Makes the agent write long-form Chinese articles in the voice of 数字生命卡兹克 | Original: 数字生命卡兹克 · [Article (Chinese)](https://mp.weixin.qq.com/s/AtxGrii_K-nzkwUM9SNhEg) |
+| 🔥 [**grill-me**](#-grill-me) | Makes the agent relentlessly question your plan or design until the requirements are clear | Original: Matt Pocock · [Source](https://github.com/mattpocock/skills/blob/main/skills/productivity/grill-me/SKILL.md) · [MIT Notice](./grill-me/NOTICE) |
 | 🧭 [**find-skills**](#-find-skills) | Helps the agent search, vet, and recommend skills from the open ecosystem | Skill |
 
 ### Prompts
@@ -53,7 +54,7 @@ In any agent that supports Skills (Claude Code, Codex, OpenClaw…), just say:
 Install this skill: https://github.com/335812350/cyber-skills/tree/main/<skill-name>
 ```
 
-Replace `<skill-name>` with the one you want — e.g. `neat-freak`, `hv-analysis`, `khazix-writer`, `find-skills`. The agent will clone it into the right directory for you.
+Replace `<skill-name>` with the one you want — e.g. `neat-freak`, `hv-analysis`, `khazix-writer`, `grill-me`, `find-skills`. The agent will clone it into the right directory for you.
 
 ---
 
@@ -170,6 +171,34 @@ You want "good general writing." This skill takes a position. It **refuses** cor
 [![Tessl](https://img.shields.io/badge/Tessl-0.1.1-3B82F6?style=flat-square)](https://tessl.io/registry/khazix-skills/khazix-writer)
 
 → [SKILL.md](./khazix-writer/SKILL.md) · [Article (Chinese)](https://mp.weixin.qq.com/s/AtxGrii_K-nzkwUM9SNhEg)
+
+</td></tr>
+</table>
+
+---
+
+<table>
+<tr><td>
+
+### 🔥 grill-me
+
+> Original: Matt Pocock. Imported from the source skill as-is. The source repository is MIT licensed.
+
+> *"Slow down while clarifying the requirement so implementation can move faster."*
+
+An extremely small but useful requirements-clarification skill. Instead of jumping straight into a plan, it keeps questioning your plan or design: which branch of the decision tree should be chosen, what depends on what, and which details are still underspecified. If the codebase can answer a question, the agent should inspect the codebase instead.
+
+**Good for**
+
+- Complex refactors, cross-module changes, file moves, and other tasks with many decision branches
+- Clarifying requirements, boundaries, dependencies, and risks before writing a plan
+- Cases where the agent seems to understand the task, but you want to stress-test that understanding first
+
+**Usage notes**
+
+`grill-me` only asks questions. After the interview, ask the agent to write the conclusions into a `plan.md`, then review or cross-check that plan before implementation. For large tasks, this keeps the execution context cleaner and reduces avoidable rework.
+
+→ [SKILL.md](./grill-me/SKILL.md) · [Source](https://github.com/mattpocock/skills/blob/main/skills/productivity/grill-me/SKILL.md) · [MIT Notice](./grill-me/NOTICE)
 
 </td></tr>
 </table>

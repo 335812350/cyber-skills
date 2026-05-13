@@ -7,7 +7,7 @@
 #### 我整理和使用的一些 Skills 和 Prompt，统一放在这里
 
 [![License](https://img.shields.io/badge/License-MIT-3B82F6?style=for-the-badge)](./LICENSE)
-[![Skills](https://img.shields.io/badge/Skills-4-10B981?style=for-the-badge)](#-skills)
+[![Skills](https://img.shields.io/badge/Skills-5-10B981?style=for-the-badge)](#-skills)
 [![Prompts](https://img.shields.io/badge/Prompts-2-F59E0B?style=for-the-badge)](#-prompts)
 [![AgentSkills](https://img.shields.io/badge/AgentSkills-Standard-8B5CF6?style=for-the-badge)](https://agentskills.io)
 
@@ -34,6 +34,7 @@
 | 🧹 [**neat-freak（洁癖）**](#-neat-freak洁癖) | 干完活跑一下 `/neat`，自动把你这次改的东西跟项目文档、CLAUDE.md、Agent 记忆全部对齐 | 原作：数字生命卡兹克 · [公众号文章](https://mp.weixin.qq.com/s/tg1wd-iN2gWHWhXdY0faeg) |
 | 🔭 [**hv-analysis（横纵分析法）**](#-hv-analysis横纵分析法) | 想搞懂一个产品/公司/概念是怎么回事，丢给它，给你一份万字 PDF 研究报告 | 原作：数字生命卡兹克 · [公众号文章](https://mp.weixin.qq.com/s/Y_uRMYBmdLWUPnz_ac7jWA) |
 | ✍️ [**khazix-writer（卡兹克写作）**](#-khazix-writer卡兹克写作) | 装上之后，Agent 按数字生命卡兹克的口吻和节奏写公众号长文 | 原作：数字生命卡兹克 · [公众号文章](https://mp.weixin.qq.com/s/AtxGrii_K-nzkwUM9SNhEg) |
+| 🔥 [**grill-me（拷问我）**](#-grill-me拷问我) | 需求还不够清楚时，让 Agent 连续追问，把计划和设计里的分叉一个个问透 | 原作：Matt Pocock · [Source](https://github.com/mattpocock/skills/blob/main/skills/productivity/grill-me/SKILL.md) · [MIT Notice](./grill-me/NOTICE) |
 | 🧭 [**find-skills（技能发现）**](#-find-skills技能发现) | 不知道该装哪个 Skill 时，让 Agent 先去开放生态里帮你找、筛、推荐 | Skill |
 
 ### Prompts
@@ -53,7 +54,7 @@
 帮我安装这个 skill：https://github.com/335812350/cyber-skills/tree/main/<skill-name>
 ```
 
-把 `<skill-name>` 换成你想装的那个，比如 `neat-freak`、`hv-analysis`、`khazix-writer`、`find-skills`。Agent 会自己 clone 到对应目录，不用你操心路径。
+把 `<skill-name>` 换成你想装的那个，比如 `neat-freak`、`hv-analysis`、`khazix-writer`、`grill-me`、`find-skills`。Agent 会自己 clone 到对应目录，不用你操心路径。
 
 ---
 
@@ -168,6 +169,38 @@ sync up          # English
 [![Tessl](https://img.shields.io/badge/Tessl-0.1.1-3B82F6?style=flat-square)](https://tessl.io/registry/khazix-skills/khazix-writer)
 
 → [SKILL.md](./khazix-writer/SKILL.md) · [公众号讲解](https://mp.weixin.qq.com/s/AtxGrii_K-nzkwUM9SNhEg)
+
+</td></tr>
+</table>
+
+---
+
+<table>
+<tr><td>
+
+### 🔥 grill-me（拷问我）
+
+> 原作：Matt Pocock。已按源文件原样引入，源仓库为 MIT License。
+
+> *"需求越清晰，执行效果才会越好。慢一点把需求问清楚，实现时才能快一点。"*
+
+这是一个极简但很有效的需求澄清 Skill。它不会上来就写方案，而是围绕你的计划或设计持续追问：每个决策分叉怎么选、依赖关系是什么、哪些细节还没说清楚。如果问题能通过读代码回答，它会优先去代码库里找答案。
+
+**适合**
+
+- 复杂项目级重构、跨模块改造、文件迁移这类分叉很多的任务
+- 写 plan 之前，把需求、边界、依赖、风险先问透
+- 你觉得“需求大概懂了”，但还担心 Agent 执行时理解偏掉
+
+**实测感受**
+
+相比普通 `/plan` 或 brainstorming，它的提问会更多、更细。复杂重构里可能会连续问十几个到二十个问题，把“文件挪到哪里、跨模块依赖怎么处理、循环依赖怎么拆、测试要不要跟着迁移、哪些函数合并或解耦”这些细节提前摊开。
+
+**使用建议**
+
+`grill-me` 本身只负责追问，不一定会自动沉淀文档。问完之后，最好让 Agent 把结论写入 `plan.md`，再做一次 review 或交叉验证；如果任务很大，可以清空上下文后按这份计划执行，保持实现阶段上下文干净。
+
+→ [SKILL.md](./grill-me/SKILL.md) · [Source](https://github.com/mattpocock/skills/blob/main/skills/productivity/grill-me/SKILL.md) · [MIT Notice](./grill-me/NOTICE)
 
 </td></tr>
 </table>
