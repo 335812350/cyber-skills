@@ -7,7 +7,7 @@
 #### 我整理和使用的一些 Skills 和 Prompt，统一放在这里
 
 [![License](https://img.shields.io/badge/License-MIT-3B82F6?style=for-the-badge)](./LICENSE)
-[![Skills](https://img.shields.io/badge/Skills-5-10B981?style=for-the-badge)](#-skills)
+[![Skills](https://img.shields.io/badge/Skills-6-10B981?style=for-the-badge)](#-skills)
 [![Prompts](https://img.shields.io/badge/Prompts-2-F59E0B?style=for-the-badge)](#-prompts)
 [![AgentSkills](https://img.shields.io/badge/AgentSkills-Standard-8B5CF6?style=for-the-badge)](https://agentskills.io)
 
@@ -36,6 +36,7 @@
 | ✍️ [**khazix-writer（卡兹克写作）**](#-khazix-writer卡兹克写作) | 装上之后，Agent 按数字生命卡兹克的口吻和节奏写公众号长文 | 原作：数字生命卡兹克 · [公众号文章](https://mp.weixin.qq.com/s/AtxGrii_K-nzkwUM9SNhEg) |
 | 🔥 [**grill-me（拷问我）**](#-grill-me拷问我) | 需求还不够清楚时，让 Agent 连续追问，把计划和设计里的分叉一个个问透 | 原作：Matt Pocock · [Source](https://github.com/mattpocock/skills/blob/main/skills/productivity/grill-me/SKILL.md) · [MIT Notice](./grill-me/NOTICE) |
 | 🧭 [**find-skills（技能发现）**](#-find-skills技能发现) | 不知道该装哪个 Skill 时，让 Agent 先去开放生态里帮你找、筛、推荐 | Skill |
+| 💬 [**wechat-article-fetcher（公众号文章抓取）**](#-wechat-article-fetcher公众号文章抓取) | 把微信公众号文章抓取、归档并导出为 Markdown，同时保存元数据、截图和图片副本 | Skill |
 
 ### Prompts
 
@@ -54,7 +55,7 @@
 帮我安装这个 skill：https://github.com/335812350/cyber-skills/tree/main/<skill-name>
 ```
 
-把 `<skill-name>` 换成你想装的那个，比如 `neat-freak`、`hv-analysis`、`khazix-writer`、`grill-me`、`find-skills`。Agent 会自己 clone 到对应目录，不用你操心路径。
+把 `<skill-name>` 换成你想装的那个，比如 `neat-freak`、`hv-analysis`、`khazix-writer`、`grill-me`、`find-skills`、`wechat-article-fetcher`。Agent 会自己 clone 到对应目录，不用你操心路径。
 
 ---
 
@@ -230,6 +231,42 @@ sync up          # English
 - 给出安装命令和学习链接
 
 → [SKILL.md](./find-skills/SKILL.md) · [skills.sh](https://skills.sh/)
+
+</td></tr>
+</table>
+
+---
+<table>
+<tr><td>
+
+### 💬 wechat-article-fetcher（公众号文章抓取）
+
+> *"给 Agent 一个微信公众号链接，让它把文章保存成可迁移的本地归档。"*
+
+这是一个面向微信公众号文章归档的 Skill。只要用户发送 `mp.weixin.qq.com` 文章链接，Agent 就会把它识别为抓取/归档请求，并通过内置 Crawl4AI 脚本导出 Markdown。
+
+**适合**
+
+- 把公众号文章保存为 Markdown，方便二次阅读、整理或进入写作流程
+- 同步保存文章元数据、页面截图和正文图片副本
+- 需要把微信文章内容迁移到本地知识库或项目资料夹
+
+**它会做什么**
+
+- 优先抓取微信正文区域，并插入单个 Markdown H1 标题
+- 保留 Markdown 中的远程 `mmbiz.qpic.cn` 图片链接
+- 将本地图片、截图、抓取结果 JSON 和 Markdown 放入带时间戳的归档目录
+- 遇到微信验证页、内容过短或图片缺失时记录 warning/failure，避免误报成功
+
+**运行要求**
+
+需要 Python 3.11+、`crawl4ai` 和 Playwright 浏览器环境。安装后可运行：
+
+```bash
+python scripts/crawl4ai_fetch_wechat.py "<mp.weixin.qq.com article url>" --output ./wechat_articles
+```
+
+→ [SKILL.md](./wechat-article-fetcher/SKILL.md) · [脚本](./wechat-article-fetcher/scripts/crawl4ai_fetch_wechat.py)
 
 </td></tr>
 </table>

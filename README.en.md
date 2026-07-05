@@ -7,7 +7,7 @@
 #### A collection of AI skills and prompts I organize and use
 
 [![License](https://img.shields.io/badge/License-MIT-3B82F6?style=for-the-badge)](./LICENSE)
-[![Skills](https://img.shields.io/badge/Skills-5-10B981?style=for-the-badge)](#-skills)
+[![Skills](https://img.shields.io/badge/Skills-6-10B981?style=for-the-badge)](#-skills)
 [![Prompts](https://img.shields.io/badge/Prompts-2-F59E0B?style=for-the-badge)](#-prompts)
 [![AgentSkills](https://img.shields.io/badge/AgentSkills-Standard-8B5CF6?style=for-the-badge)](https://agentskills.io)
 
@@ -36,6 +36,7 @@ This repository collects Skills and Prompts I use for AI-assisted work. Some ent
 | ✍️ [**khazix-writer**](#-khazix-writer) | Makes the agent write long-form Chinese articles in the voice of 数字生命卡兹克 | Original: 数字生命卡兹克 · [Article (Chinese)](https://mp.weixin.qq.com/s/AtxGrii_K-nzkwUM9SNhEg) |
 | 🔥 [**grill-me**](#-grill-me) | Makes the agent relentlessly question your plan or design until the requirements are clear | Original: Matt Pocock · [Source](https://github.com/mattpocock/skills/blob/main/skills/productivity/grill-me/SKILL.md) · [MIT Notice](./grill-me/NOTICE) |
 | 🧭 [**find-skills**](#-find-skills) | Helps the agent search, vet, and recommend skills from the open ecosystem | Skill |
+| 💬 [**wechat-article-fetcher**](#-wechat-article-fetcher) | Fetches and archives WeChat Official Account articles as Markdown, with metadata, screenshots, and image copies | Skill |
 
 ### Prompts
 
@@ -54,7 +55,7 @@ In any agent that supports Skills (Claude Code, Codex, OpenClaw…), just say:
 Install this skill: https://github.com/335812350/cyber-skills/tree/main/<skill-name>
 ```
 
-Replace `<skill-name>` with the one you want — e.g. `neat-freak`, `hv-analysis`, `khazix-writer`, `grill-me`, `find-skills`. The agent will clone it into the right directory for you.
+Replace `<skill-name>` with the one you want — e.g. `neat-freak`, `hv-analysis`, `khazix-writer`, `grill-me`, `find-skills`, `wechat-article-fetcher`. The agent will clone it into the right directory for you.
 
 ---
 
@@ -228,6 +229,42 @@ A skill that helps agents discover, evaluate, and install useful skills from the
 - Returns install commands and links for follow-up reading
 
 → [SKILL.md](./find-skills/SKILL.md) · [skills.sh](https://skills.sh/)
+
+</td></tr>
+</table>
+
+---
+<table>
+<tr><td>
+
+### 💬 wechat-article-fetcher
+
+> *"Give the agent a WeChat article link and let it save a portable local archive."*
+
+A skill for archiving WeChat Official Account articles. When a user sends an `mp.weixin.qq.com` article link, the agent treats it as a fetch/archive request and exports the article to Markdown through the included Crawl4AI script.
+
+**Good for**
+
+- Saving WeChat articles as Markdown for reading, writing, or knowledge-base workflows
+- Keeping article metadata, a page screenshot, and local copies of body images
+- Migrating WeChat article content into a local project folder
+
+**What it does**
+
+- Prioritizes the main WeChat article body and inserts a single Markdown H1 title
+- Keeps remote `mmbiz.qpic.cn` image URLs in the Markdown
+- Saves local images, screenshot, crawl result JSON, and Markdown into a timestamped archive folder
+- Records warnings or failures for verification pages, short content, or missing image links instead of pretending the fetch succeeded
+
+**Requirements**
+
+Requires Python 3.11+, `crawl4ai`, and a configured Playwright browser environment. After setup, run:
+
+```bash
+python scripts/crawl4ai_fetch_wechat.py "<mp.weixin.qq.com article url>" --output ./wechat_articles
+```
+
+→ [SKILL.md](./wechat-article-fetcher/SKILL.md) · [Script](./wechat-article-fetcher/scripts/crawl4ai_fetch_wechat.py)
 
 </td></tr>
 </table>

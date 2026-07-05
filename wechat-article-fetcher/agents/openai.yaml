@@ -1,0 +1,7 @@
+interface:
+  display_name: "WeChat Article Fetcher"
+  short_description: "将微信公众号文章归档为 Markdown"
+  default_prompt: "使用 $wechat-article-fetcher 将这篇微信公众号文章归档为 Markdown，并保存图片和元数据。"
+
+policy:
+  allow_implicit_invocation: true
