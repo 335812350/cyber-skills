@@ -7,7 +7,7 @@
 #### 我整理和使用的一些 Skills 和 Prompt，统一放在这里
 
 [![License](https://img.shields.io/badge/License-MIT-3B82F6?style=for-the-badge)](./LICENSE)
-[![Skills](https://img.shields.io/badge/Skills-6-10B981?style=for-the-badge)](#-skills)
+[![Skills](https://img.shields.io/badge/Skills-7-10B981?style=for-the-badge)](#-skills)
 [![Prompts](https://img.shields.io/badge/Prompts-2-F59E0B?style=for-the-badge)](#-prompts)
 [![AgentSkills](https://img.shields.io/badge/AgentSkills-Standard-8B5CF6?style=for-the-badge)](https://agentskills.io)
 
@@ -37,6 +37,7 @@
 | 🔥 [**grill-me（拷问我）**](#-grill-me拷问我) | 需求还不够清楚时，让 Agent 连续追问，把计划和设计里的分叉一个个问透 | 原作：Matt Pocock · [Source](https://github.com/mattpocock/skills/blob/main/skills/productivity/grill-me/SKILL.md) · [MIT Notice](./grill-me/NOTICE) |
 | 🧭 [**find-skills（技能发现）**](#-find-skills技能发现) | 不知道该装哪个 Skill 时，让 Agent 先去开放生态里帮你找、筛、推荐 | Skill |
 | 💬 [**wechat-article-fetcher（公众号文章抓取）**](#-wechat-article-fetcher公众号文章抓取) | 把微信公众号文章抓取、归档并导出为 Markdown，同时保存元数据、截图和图片副本 | Skill |
+| 🧹 [**disk-cleaner（磁盘清理）**](#-disk-cleaner磁盘清理) | C 盘/D 盘爆满时，用 WizTree 扫描 + AI 分析出一份分级清理方案，每项等你批准才动手，删前自动备份可回滚 | 原作：iziqing · [Source](https://github.com/iziqing/-disk-cleaner) · [MIT Notice](./disk-cleaner/NOTICE) |
 
 ### Prompts
 
@@ -55,7 +56,7 @@
 帮我安装这个 skill：https://github.com/335812350/cyber-skills/tree/main/<skill-name>
 ```
 
-把 `<skill-name>` 换成你想装的那个，比如 `neat-freak`、`hv-analysis`、`khazix-writer`、`grill-me`、`find-skills`、`wechat-article-fetcher`。Agent 会自己 clone 到对应目录，不用你操心路径。
+把 `<skill-name>` 换成你想装的那个，比如 `neat-freak`、`hv-analysis`、`khazix-writer`、`grill-me`、`find-skills`、`wechat-article-fetcher`、`disk-cleaner`。Agent 会自己 clone 到对应目录，不用你操心路径。
 
 ---
 
@@ -267,6 +268,39 @@ python scripts/crawl4ai_fetch_wechat.py "<mp.weixin.qq.com article url>" --outpu
 ```
 
 → [SKILL.md](./wechat-article-fetcher/SKILL.md) · [脚本](./wechat-article-fetcher/scripts/crawl4ai_fetch_wechat.py)
+
+</td></tr>
+</table>
+
+---
+<table>
+<tr><td>
+
+### 🧹 disk-cleaner（磁盘清理）
+
+> 原作：iziqing。已按源文件原样引入，源仓库为 MIT License。
+
+> *"删前必备份，没批复不动手。"*
+
+C 盘 / D 盘爆满时，让 Agent 用 WizTree 快速扫描磁盘，再结合模式库和知识库做两层分析，输出一份**分级清理方案**——每项写清路径、大小、是什么、删了会怎样，逐条编号等你批复。批准之后才动手，删之前自动备份，出问题可以一键回滚。
+
+**适合**
+
+- 系统盘飘红、想安全回收空间但怕误删
+- 单个巨型文件（内核转储、Chrome 端侧 AI 模型、半成品下载）占了大量空间却找不到
+- 清理完想保留备份观察一段时间，确认没事再删
+
+**安全设计**
+
+- 任何权限模式下，清理方案都必须经用户确认才执行，沉默不算同意
+- 备份失败则中止清理；回滚通过 `backup.py restore` 一键恢复
+- 红线清单明确列出本次绝不碰的目录；模式库认不出的文件一律不预设可删
+
+**运行要求**
+
+需要 Windows、管理员权限（用于 WizTree 自动扫描）和 Python。流程细节见 [SKILL.md](./disk-cleaner/SKILL.md)。
+
+→ [SKILL.md](./disk-cleaner/SKILL.md) · [Source](https://github.com/iziqing/-disk-cleaner) · [MIT Notice](./disk-cleaner/NOTICE)
 
 </td></tr>
 </table>

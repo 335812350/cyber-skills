@@ -7,7 +7,7 @@
 #### A collection of AI skills and prompts I organize and use
 
 [![License](https://img.shields.io/badge/License-MIT-3B82F6?style=for-the-badge)](./LICENSE)
-[![Skills](https://img.shields.io/badge/Skills-6-10B981?style=for-the-badge)](#-skills)
+[![Skills](https://img.shields.io/badge/Skills-7-10B981?style=for-the-badge)](#-skills)
 [![Prompts](https://img.shields.io/badge/Prompts-2-F59E0B?style=for-the-badge)](#-prompts)
 [![AgentSkills](https://img.shields.io/badge/AgentSkills-Standard-8B5CF6?style=for-the-badge)](https://agentskills.io)
 
@@ -37,6 +37,7 @@ This repository collects Skills and Prompts I use for AI-assisted work. Some ent
 | 🔥 [**grill-me**](#-grill-me) | Makes the agent relentlessly question your plan or design until the requirements are clear | Original: Matt Pocock · [Source](https://github.com/mattpocock/skills/blob/main/skills/productivity/grill-me/SKILL.md) · [MIT Notice](./grill-me/NOTICE) |
 | 🧭 [**find-skills**](#-find-skills) | Helps the agent search, vet, and recommend skills from the open ecosystem | Skill |
 | 💬 [**wechat-article-fetcher**](#-wechat-article-fetcher) | Fetches and archives WeChat Official Account articles as Markdown, with metadata, screenshots, and image copies | Skill |
+| 🧹 [**disk-cleaner**](#-disk-cleaner) | When C:/D: is full, scans with WizTree and uses AI analysis to produce a tiered cleanup plan; every item waits for your approval before acting, with automatic backup and rollback | Original: iziqing · [Source](https://github.com/iziqing/-disk-cleaner) · [MIT Notice](./disk-cleaner/NOTICE) |
 
 ### Prompts
 
@@ -55,7 +56,7 @@ In any agent that supports Skills (Claude Code, Codex, OpenClaw…), just say:
 Install this skill: https://github.com/335812350/cyber-skills/tree/main/<skill-name>
 ```
 
-Replace `<skill-name>` with the one you want — e.g. `neat-freak`, `hv-analysis`, `khazix-writer`, `grill-me`, `find-skills`, `wechat-article-fetcher`. The agent will clone it into the right directory for you.
+Replace `<skill-name>` with the one you want — e.g. `neat-freak`, `hv-analysis`, `khazix-writer`, `grill-me`, `find-skills`, `wechat-article-fetcher`, `disk-cleaner`. The agent will clone it into the right directory for you.
 
 ---
 
@@ -265,6 +266,39 @@ python scripts/crawl4ai_fetch_wechat.py "<mp.weixin.qq.com article url>" --outpu
 ```
 
 → [SKILL.md](./wechat-article-fetcher/SKILL.md) · [Script](./wechat-article-fetcher/scripts/crawl4ai_fetch_wechat.py)
+
+</td></tr>
+</table>
+
+---
+<table>
+<tr><td>
+
+### 🧹 disk-cleaner
+
+> Original: iziqing. Imported from the source skill as-is. The source repository is MIT licensed.
+
+> *"Back up before deleting; nothing moves without your approval."*
+
+When your C: or D: drive is full, the agent scans it with WizTree, runs two layers of analysis (pattern library + knowledge base), and produces a **tiered cleanup plan** — every item lists path, size, what it is, and what happens if you delete it, numbered so you can approve items one by one. Nothing is touched until you approve, everything is backed up before deletion, and a rollback restores backups in one step.
+
+**Good for**
+
+- A red system drive where you want to reclaim space safely, without risky deletions
+- Huge single files (kernel dumps, Chrome on-device AI models, half-finished downloads) eating space and hiding from view
+- Keeping the backup around for an observation period after cleanup, deleting it only once things look fine
+
+**Safety design**
+
+- In any permission mode, the cleanup plan must be approved by the user before execution; silence is not consent
+- Backup failure aborts the cleanup; rollback runs via `backup.py restore`
+- A red-line list spells out what this run will never touch; files the pattern library can't classify are never assumed deletable
+
+**Requirements**
+
+Requires Windows, administrator privileges (for the automatic WizTree scan), and Python. See [SKILL.md](./disk-cleaner/SKILL.md) for the full workflow.
+
+→ [SKILL.md](./disk-cleaner/SKILL.md) · [Source](https://github.com/iziqing/-disk-cleaner) · [MIT Notice](./disk-cleaner/NOTICE)
 
 </td></tr>
 </table>
