@@ -32,13 +32,13 @@ This repository collects Skills and Prompts I use for AI-assisted work. Some ent
 > Grouped by development stage. Entries marked **External** live upstream — follow the link in Notes to install them. Everything else can be cloned from this repo.
 > Rows marked ⭐ are the set 黄同学h actually uses; the full flow is in [ai-dev-workflow](#-ai-dev-workflow).
 
-**① Overall flow**
+**Overview**
 
 | Name | One-liner | Notes |
 |---|---|---|
 | 🧭 [**ai-dev-workflow**](#-ai-dev-workflow) | Runs requirements through align → spec → implement → end-to-end self-test → cross-review, with five "thinking shortcuts" built in; small changes can skip the flow | This repo · Reference: 黄同学h · [Original post](https://x.com/huangtongxueh/status/2108577165306687938) |
 
-**② Planning & requirements**
+**Planning & requirements**
 
 | Name | One-liner | Notes |
 |---|---|---|
@@ -46,13 +46,13 @@ This repository collects Skills and Prompts I use for AI-assisted work. Some ent
 | 🔥 ⭐ [**grill-me**](#-grill-me) | Makes the agent relentlessly question your plan or design until the requirements are clear | This repo · Original: Matt Pocock · [MIT Notice](./grill-me/NOTICE) |
 | 📐 [**grill-with-docs**](https://github.com/mattpocock/skills/tree/main/skills/engineering/grill-with-docs) | Relentless interviewing that also produces ADRs and a glossary as it goes | External · mattpocock/skills |
 
-**③ Implementation**
+**Implementation**
 
 | Name | One-liner | Notes |
 |---|---|---|
 | ⚙️ ⭐ [**implement**](https://github.com/mattpocock/skills/tree/main/skills/engineering/implement) | Implements an already-agreed spec or ticket without re-litigating requirements | External · mattpocock/skills |
 
-**④ Review & wrap-up**
+**Review & wrap-up**
 
 | Name | One-liner | Notes |
 |---|---|---|
@@ -61,14 +61,14 @@ This repository collects Skills and Prompts I use for AI-assisted work. Some ent
 | 🧹 [**neat-freak**](#-neat-freak) | After a session, run `/neat` to reconcile your project docs, CLAUDE.md, and agent memory with the code | This repo · Original: 数字生命卡兹克 · [Article (Chinese)](https://mp.weixin.qq.com/s/tg1wd-iN2gWHWhXdY0faeg) |
 | 🤝 ⭐ [**handoff**](https://github.com/mattpocock/skills/tree/main/skills/productivity/handoff) | Compacts the current conversation into a handoff document for another agent or session | External · mattpocock/skills |
 
-**⑤ Writing & research**
+**Writing & research**
 
 | Name | One-liner | Notes |
 |---|---|---|
 | ✍️ [**khazix-writer**](#-khazix-writer) | Makes the agent write long-form Chinese articles in the voice of 数字生命卡兹克 | This repo · Original: 数字生命卡兹克 · [Article (Chinese)](https://mp.weixin.qq.com/s/AtxGrii_K-nzkwUM9SNhEg) |
 | 🔭 [**hv-analysis**](#-hv-analysis) | Drop a product/company/concept into it and get a 10k–30k word PDF research report | This repo · Original: 数字生命卡兹克 · [Article (Chinese)](https://mp.weixin.qq.com/s/Y_uRMYBmdLWUPnz_ac7jWA) |
 
-**⑥ Tools & system**
+**Tools & system**
 
 | Name | One-liner | Notes |
 |---|---|---|

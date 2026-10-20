@@ -32,13 +32,13 @@
 > 按开发阶段分类。标「外部」的不在本仓库，点备注里的链接去上游安装；其余可以直接克隆。
 > 表格里带 ⭐ 的是黄同学h 文中实际在用的组合，完整流程见 [ai-dev-workflow](#-ai-dev-workflowai-开发工作流)。
 
-**① 总流程**
+**流程总览**
 
 | 名字 | 一句话 | 备注 |
 |---|---|---|
 | 🧭 [**ai-dev-workflow（AI 开发工作流）**](#-ai-dev-workflowai-开发工作流) | 拿到需求后按「对齐 → 沉淀 Spec → 实现 → 端到端自测 → 交叉审查」推进，内置五个思维快捷键；小改动可直接跳过流程 | 本仓库 · 参考：黄同学h · [X 原文](https://x.com/huangtongxueh/status/2108577165306687938) |
 
-**② 规划与需求**
+**规划与需求**
 
 | 名字 | 一句话 | 备注 |
 |---|---|---|
@@ -46,13 +46,13 @@
 | 🔥 ⭐ [**grill-me（拷问我）**](#-grill-me拷问我) | 需求还不够清楚时，让 Agent 连续追问，把计划和设计里的分叉一个个问透 | 本仓库 · 原作 Matt Pocock · [MIT Notice](./grill-me/NOTICE) |
 | 📐 [**grill-with-docs**](https://github.com/mattpocock/skills/tree/main/skills/engineering/grill-with-docs) | 连续追问的同时把结论沉淀成 ADR 和术语表 | 外部 · mattpocock/skills |
 
-**③ 实现**
+**实现**
 
 | 名字 | 一句话 | 备注 |
 |---|---|---|
 | ⚙️ ⭐ [**implement**](https://github.com/mattpocock/skills/tree/main/skills/engineering/implement) | 按已经明确的 spec 或 issue 落地，不再重新讨论需求 | 外部 · mattpocock/skills |
 
-**④ 审查与收尾**
+**审查与收尾**
 
 | 名字 | 一句话 | 备注 |
 |---|---|---|
@@ -61,14 +61,14 @@
 | 🧹 [**neat-freak（洁癖）**](#-neat-freak洁癖) | 干完活跑一下 `/neat`，自动把你这次改的东西跟项目文档、CLAUDE.md、Agent 记忆全部对齐 | 本仓库 · 原作：数字生命卡兹克 · [公众号文章](https://mp.weixin.qq.com/s/tg1wd-iN2gWHWhXdY0faeg) |
 | 🤝 ⭐ [**handoff**](https://github.com/mattpocock/skills/tree/main/skills/productivity/handoff) | 把当前会话压成交接文档，换 Agent 或换会话继续 | 外部 · mattpocock/skills |
 
-**⑤ 写作与研究**
+**写作与研究**
 
 | 名字 | 一句话 | 备注 |
 |---|---|---|
 | ✍️ [**khazix-writer（卡兹克写作）**](#-khazix-writer卡兹克写作) | 装上之后，Agent 按数字生命卡兹克的口吻和节奏写公众号长文 | 本仓库 · 原作：数字生命卡兹克 · [公众号文章](https://mp.weixin.qq.com/s/AtxGrii_K-nzkwUM9SNhEg) |
 | 🔭 [**hv-analysis（横纵分析法）**](#-hv-analysis横纵分析法) | 想搞懂一个产品/公司/概念是怎么回事，丢给它，给你一份万字 PDF 研究报告 | 本仓库 · 原作：数字生命卡兹克 · [公众号文章](https://mp.weixin.qq.com/s/Y_uRMYBmdLWUPnz_ac7jWA) |
 
-**⑥ 工具与系统**
+**工具与系统**
 
 | 名字 | 一句话 | 备注 |
 |---|---|---|
