@@ -69,6 +69,7 @@
 | 名字 | 一句话 | 备注 |
 |---|---|---|
 | ✍️ [**khazix-writer（卡兹克写作）**](#-khazix-writer卡兹克写作) | 装上之后，Agent 按数字生命卡兹克的口吻和节奏写公众号长文 | 本仓库 · 原作：数字生命卡兹克 · [公众号文章](https://mp.weixin.qq.com/s/AtxGrii_K-nzkwUM9SNhEg) |
+| 🪄 [**humanizer-zh（中文去 AI 味）**](https://github.com/op7418/Humanizer-zh) | 编辑中文文章里的空话、重复和模板化表达，保留事实、确定程度和作者声音；不保证通过 AI 检测器 | 外部 · op7418 · MIT |
 | 🔭 [**hv-analysis（横纵分析法）**](#-hv-analysis横纵分析法) | 想搞懂一个产品/公司/概念是怎么回事，丢给它，给你一份万字 PDF 研究报告 | 本仓库 · 原作：数字生命卡兹克 · [公众号文章](https://mp.weixin.qq.com/s/Y_uRMYBmdLWUPnz_ac7jWA) |
 
 **3. 工具与系统** — 运行环境、磁盘、技能发现等辅助能力
@@ -99,7 +100,7 @@
 
 把 `<skill-name>` 换成你想装的那个，比如 `neat-freak`、`hv-analysis`、`khazix-writer`、`grill-me`、`find-skills`、`wechat-article-fetcher`、`disk-cleaner`、`ai-dev-workflow`。Agent 会自己 clone 到对应目录，不用你操心路径。
 
-标「外部」的技能不在本仓库（`think`、`check`、`implement`、`handoff`、`grill-with-docs`、`ponytail`），按索引里备注的上游链接安装，避免重复维护。
+标「外部」的技能不在本仓库（`think`、`check`、`implement`、`handoff`、`grill-with-docs`、`ponytail`、`humanizer-zh`），按索引里备注的上游链接安装，避免重复维护。
 
 ---
 
@@ -237,6 +238,8 @@ sync up          # English
 </table>
 
 **2. 写作与研究** — 内容生产与调研，不参与编码流程
+
+> 本组的外部技能：`humanizer-zh`（中文去 AI 味），见上方索引。
 
 <table>
 <tr><td>

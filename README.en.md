@@ -69,6 +69,7 @@ This repository collects Skills and Prompts I use for AI-assisted work. Some ent
 | Name | One-liner | Notes |
 |---|---|---|
 | ✍️ [**khazix-writer**](#-khazix-writer) | Makes the agent write long-form Chinese articles in the voice of 数字生命卡兹克 | This repo · Original: 数字生命卡兹克 · [Article (Chinese)](https://mp.weixin.qq.com/s/AtxGrii_K-nzkwUM9SNhEg) |
+| 🪄 [**humanizer-zh**](https://github.com/op7418/Humanizer-zh) | Edits filler, repetition and templated phrasing out of Chinese text while preserving facts, certainty and the author's voice; not a guarantee of passing AI detectors | External · op7418 · MIT |
 | 🔭 [**hv-analysis**](#-hv-analysis) | Drop a product/company/concept into it and get a 10k–30k word PDF research report | This repo · Original: 数字生命卡兹克 · [Article (Chinese)](https://mp.weixin.qq.com/s/Y_uRMYBmdLWUPnz_ac7jWA) |
 
 **3. Tools & system** — runtime, disk, skill discovery and other utilities
@@ -99,7 +100,7 @@ Install this skill: https://github.com/335812350/cyber-skills/tree/main/<skill-n
 
 Replace `<skill-name>` with the one you want — e.g. `neat-freak`, `hv-analysis`, `khazix-writer`, `grill-me`, `find-skills`, `wechat-article-fetcher`, `disk-cleaner`, `ai-dev-workflow`. The agent will clone it into the right directory for you.
 
-Skills marked **External** (`think`, `check`, `implement`, `handoff`, `grill-with-docs`, `ponytail`) are not in this repo — install them from the upstream links in the index so there is only one copy to maintain.
+Skills marked **External** (`think`, `check`, `implement`, `handoff`, `grill-with-docs`, `ponytail`, `humanizer-zh`) are not in this repo — install them from the upstream links in the index so there is only one copy to maintain.
 
 ---
 
@@ -233,6 +234,8 @@ tidy up docs     # natural language
 </table>
 
 **2. Writing & research** — content production and research, outside the coding flow
+
+> External skill in this group: `humanizer-zh` (removes AI tone from Chinese text) — see the index above.
 
 <table>
 <tr><td>
