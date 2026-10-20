@@ -107,6 +107,87 @@ Skills marked **External** (`think`, `check`, `implement`, `handoff`, `grill-wit
 
 <a id="-skills"></a>
 
+**1. AI development workflow** — the end-to-end path from a requirement to a merge
+
+> External skills in this group: `think`, `grill-with-docs`, `implement`, `check`, `ponytail`, `handoff`. They live upstream — see the index above.
+
+<table>
+<tr><td>
+
+### 🧭 ai-dev-workflow
+
+> Reference: 黄同学h, "入职大厂两个月，我的 AI 开发心得". An executable distillation of the original methodology, not the article text.
+
+> *"When the model changes, the workflow has to shed weight too."*
+
+A development workflow for **iterating on an existing project**. It does not start by writing code — it first decides whether the change is worth running a process at all:
+
+- One line, a field, a validation rule → just do it, skip the flow
+- A single-module feature → align → implement → self-test → self-review
+- Cross-module or architectural → run all five steps
+
+**The five steps**
+
+1. **Align** — feed real material (PRD, meeting notes, chat logs) and keep asking about goals, boundaries, and trade-offs. Stop when the remaining questions no longer change the direction of implementation.
+2. **Write it down** — put the problem, scope, key decisions, and acceptance criteria into a spec or `CONTEXT.md`.
+3. **Implement** — split complex work into independently acceptable issues; only genuinely independent parts go to parallel subagents.
+4. **Self-test end to end** — one-command environments, the ability to drive the real business flow, read-only DB and log access, and the repeatable parts packaged as scripts or a CLI. **Tools provide evidence; they do not define the correct answer.**
+5. **Review** — acceptance criteria before test results; focus on permissions, concurrency, retries, consistency, migrations and rollback; re-check new abstractions with Occam's razor.
+
+**Five built-in thinking shortcuts**
+
+First principles · Adversarial review · Ablation · Occam's razor · High cohesion / low coupling — each with a sentence you can say verbatim, used to specify *how* to think rather than a fixed script.
+
+**Good for**
+
+- Fuzzy requirements or competing designs that need pressure-testing first
+- Letting the agent run end-to-end tests instead of piling up unit tests
+- Reviewing AI-written code without reading every line
+
+**Not for**
+
+- One-off scripts, config edits, copy changes — anything with no real uncertainty
+- Teams with no test environment yet; the skill tells you what to build, it cannot build it
+
+→ [SKILL.md](./ai-dev-workflow/SKILL.md) · [Full notes](./ai-dev-workflow/references/huang-ai-dev-notes.md) · [Original post](https://x.com/huangtongxueh/status/2108577165306687938)
+
+</td></tr>
+</table>
+
+**1.1 Planning & requirements** — clarify the requirement and settle the design before writing code
+
+<table>
+<tr><td>
+
+### 🔥 grill-me
+
+> Original: Matt Pocock. Imported from the source skill as-is. The source repository is MIT licensed.
+
+> *"Slow down while clarifying the requirement so implementation can move faster."*
+
+An extremely small but useful requirements-clarification skill. Instead of jumping straight into a plan, it keeps questioning your plan or design: which branch of the decision tree should be chosen, what depends on what, and which details are still underspecified. If the codebase can answer a question, the agent should inspect the codebase instead.
+
+**Good for**
+
+- Complex refactors, cross-module changes, file moves, and other tasks with many decision branches
+- Clarifying requirements, boundaries, dependencies, and risks before writing a plan
+- Cases where the agent seems to understand the task, but you want to stress-test that understanding first
+
+**Usage notes**
+
+`grill-me` only asks questions. After the interview, ask the agent to write the conclusions into a `plan.md`, then review or cross-check that plan before implementation. For large tasks, this keeps the execution context cleaner and reduces avoidable rework.
+
+→ [SKILL.md](./grill-me/SKILL.md) · [Source](https://github.com/mattpocock/skills/blob/main/skills/productivity/grill-me/SKILL.md) · [MIT Notice](./grill-me/NOTICE)
+
+</td></tr>
+</table>
+
+**1.2 Implementation** — write code against the agreed design, no re-litigating requirements
+
+> Not hosted here — use the external `implement` skill; see the index above.
+
+**1.3 Review & wrap-up** — pre-merge checks, cut over-engineering, reconcile docs and hand off
+
 <table>
 <tr><td>
 
@@ -151,39 +232,7 @@ tidy up docs     # natural language
 </td></tr>
 </table>
 
-<table>
-<tr><td>
-
-### 🔭 hv-analysis (Horizontal-Vertical Analysis)
-
-> Original: 数字生命卡兹克. The description below is adapted from the original public introduction.
-
-> *"Vertical axis chases time depth, horizontal axis chases simultaneous breadth. They cross to give you the verdict."*
-
-Want to actually understand what a product / company / concept / person is about? Hand it over.
-
-It runs two threads in parallel: **vertical** — tells the subject's story from inception to the present moment, like a narrative; **horizontal** — lays out every major competitor at the current moment for comparison. When the two cross, you see things that neither current-state nor history alone would show you.
-
-The output is a **typeset PDF research report**, 10,000–30,000 words.
-
-**Good for**
-
-- Competitor research / understanding a new concept / company background research
-- Front-loaded research before writing or strategy work
-- Wanting to understand a domain from scratch
-
-**Not good for**
-
-- A simple definition lookup — overkill, just ask in regular chat
-- Writing a long-form article — that's [khazix-writer](#-khazix-writer)'s job
-
-[![ClawHub](https://img.shields.io/badge/ClawHub-v1.0.0-EC4899?style=flat-square)](https://clawhub.ai)
-[![Tessl](https://img.shields.io/badge/Tessl-published-3B82F6?style=flat-square)](https://tessl.io/registry/khazix-skills/hv-analysis)
-
-→ [SKILL.md](./hv-analysis/SKILL.md) · [Article (Chinese)](https://mp.weixin.qq.com/s/Y_uRMYBmdLWUPnz_ac7jWA)
-
-</td></tr>
-</table>
+**2. Writing & research** — content production and research, outside the coding flow
 
 <table>
 <tr><td>
@@ -220,35 +269,41 @@ You want "good general writing." This skill takes a position. It **refuses** cor
 </td></tr>
 </table>
 
----
-
 <table>
 <tr><td>
 
-### 🔥 grill-me
+### 🔭 hv-analysis (Horizontal-Vertical Analysis)
 
-> Original: Matt Pocock. Imported from the source skill as-is. The source repository is MIT licensed.
+> Original: 数字生命卡兹克. The description below is adapted from the original public introduction.
 
-> *"Slow down while clarifying the requirement so implementation can move faster."*
+> *"Vertical axis chases time depth, horizontal axis chases simultaneous breadth. They cross to give you the verdict."*
 
-An extremely small but useful requirements-clarification skill. Instead of jumping straight into a plan, it keeps questioning your plan or design: which branch of the decision tree should be chosen, what depends on what, and which details are still underspecified. If the codebase can answer a question, the agent should inspect the codebase instead.
+Want to actually understand what a product / company / concept / person is about? Hand it over.
+
+It runs two threads in parallel: **vertical** — tells the subject's story from inception to the present moment, like a narrative; **horizontal** — lays out every major competitor at the current moment for comparison. When the two cross, you see things that neither current-state nor history alone would show you.
+
+The output is a **typeset PDF research report**, 10,000–30,000 words.
 
 **Good for**
 
-- Complex refactors, cross-module changes, file moves, and other tasks with many decision branches
-- Clarifying requirements, boundaries, dependencies, and risks before writing a plan
-- Cases where the agent seems to understand the task, but you want to stress-test that understanding first
+- Competitor research / understanding a new concept / company background research
+- Front-loaded research before writing or strategy work
+- Wanting to understand a domain from scratch
 
-**Usage notes**
+**Not good for**
 
-`grill-me` only asks questions. After the interview, ask the agent to write the conclusions into a `plan.md`, then review or cross-check that plan before implementation. For large tasks, this keeps the execution context cleaner and reduces avoidable rework.
+- A simple definition lookup — overkill, just ask in regular chat
+- Writing a long-form article — that's [khazix-writer](#-khazix-writer)'s job
 
-→ [SKILL.md](./grill-me/SKILL.md) · [Source](https://github.com/mattpocock/skills/blob/main/skills/productivity/grill-me/SKILL.md) · [MIT Notice](./grill-me/NOTICE)
+[![ClawHub](https://img.shields.io/badge/ClawHub-v1.0.0-EC4899?style=flat-square)](https://clawhub.ai)
+[![Tessl](https://img.shields.io/badge/Tessl-published-3B82F6?style=flat-square)](https://tessl.io/registry/khazix-skills/hv-analysis)
+
+→ [SKILL.md](./hv-analysis/SKILL.md) · [Article (Chinese)](https://mp.weixin.qq.com/s/Y_uRMYBmdLWUPnz_ac7jWA)
 
 </td></tr>
 </table>
 
----
+**3. Tools & system** — runtime, disk, skill discovery and other utilities
 
 <table>
 <tr><td>
@@ -277,7 +332,6 @@ A skill that helps agents discover, evaluate, and install useful skills from the
 </td></tr>
 </table>
 
----
 <table>
 <tr><td>
 
@@ -313,7 +367,6 @@ python scripts/crawl4ai_fetch_wechat.py "<mp.weixin.qq.com article url>" --outpu
 </td></tr>
 </table>
 
----
 <table>
 <tr><td>
 
@@ -347,50 +400,7 @@ Requires Windows, administrator privileges (for the automatic WizTree scan), and
 </table>
 
 ---
-<table>
-<tr><td>
 
-### 🧭 ai-dev-workflow
-
-> Reference: 黄同学h, "入职大厂两个月，我的 AI 开发心得". An executable distillation of the original methodology, not the article text.
-
-> *"When the model changes, the workflow has to shed weight too."*
-
-A development workflow for **iterating on an existing project**. It does not start by writing code — it first decides whether the change is worth running a process at all:
-
-- One line, a field, a validation rule → just do it, skip the flow
-- A single-module feature → align → implement → self-test → self-review
-- Cross-module or architectural → run all five steps
-
-**The five steps**
-
-1. **Align** — feed real material (PRD, meeting notes, chat logs) and keep asking about goals, boundaries, and trade-offs. Stop when the remaining questions no longer change the direction of implementation.
-2. **Write it down** — put the problem, scope, key decisions, and acceptance criteria into a spec or `CONTEXT.md`.
-3. **Implement** — split complex work into independently acceptable issues; only genuinely independent parts go to parallel subagents.
-4. **Self-test end to end** — one-command environments, the ability to drive the real business flow, read-only DB and log access, and the repeatable parts packaged as scripts or a CLI. **Tools provide evidence; they do not define the correct answer.**
-5. **Review** — acceptance criteria before test results; focus on permissions, concurrency, retries, consistency, migrations and rollback; re-check new abstractions with Occam's razor.
-
-**Five built-in thinking shortcuts**
-
-First principles · Adversarial review · Ablation · Occam's razor · High cohesion / low coupling — each with a sentence you can say verbatim, used to specify *how* to think rather than a fixed script.
-
-**Good for**
-
-- Fuzzy requirements or competing designs that need pressure-testing first
-- Letting the agent run end-to-end tests instead of piling up unit tests
-- Reviewing AI-written code without reading every line
-
-**Not for**
-
-- One-off scripts, config edits, copy changes — anything with no real uncertainty
-- Teams with no test environment yet; the skill tells you what to build, it cannot build it
-
-→ [SKILL.md](./ai-dev-workflow/SKILL.md) · [Full notes](./ai-dev-workflow/references/huang-ai-dev-notes.md) · [Original post](https://x.com/huangtongxueh/status/2108577165306687938)
-
-</td></tr>
-</table>
-
----
 ## 📝 Prompts
 
 <a id="-prompts"></a>
