@@ -29,16 +29,19 @@ This repository collects Skills and Prompts I use for AI-assisted work. Some ent
 
 ### Skills
 
-> Grouped by development stage. Entries marked **External** live upstream — follow the link in Notes to install them. Everything else can be cloned from this repo.
-> Rows marked ⭐ are the set 黄同学h actually uses; the full flow is in [ai-dev-workflow](#-ai-dev-workflow).
+> Grouped into three areas. The first is the full AI development workflow, broken into stages; the other two are standalone capabilities.
+> Entries marked **External** live upstream — follow the link in Notes to install them. Everything else can be cloned from this repo.
+> Rows marked ⭐ are the set 黄同学h actually uses.
 
-**Overview**
+**1. AI development workflow**
+
+> The end-to-end path from a requirement to a merge. `ai-dev-workflow` is the flow itself; the three stages below each have their own skill set.
 
 | Name | One-liner | Notes |
 |---|---|---|
 | 🧭 [**ai-dev-workflow**](#-ai-dev-workflow) | Runs requirements through align → spec → implement → end-to-end self-test → cross-review, with five "thinking shortcuts" built in; small changes can skip the flow | This repo · Reference: 黄同学h · [Original post](https://x.com/huangtongxueh/status/2108577165306687938) |
 
-**Planning & requirements**
+**1.1 Planning & requirements** — clarify the requirement and settle the design before writing code
 
 | Name | One-liner | Notes |
 |---|---|---|
@@ -46,13 +49,13 @@ This repository collects Skills and Prompts I use for AI-assisted work. Some ent
 | 🔥 ⭐ [**grill-me**](#-grill-me) | Makes the agent relentlessly question your plan or design until the requirements are clear | This repo · Original: Matt Pocock · [MIT Notice](./grill-me/NOTICE) |
 | 📐 [**grill-with-docs**](https://github.com/mattpocock/skills/tree/main/skills/engineering/grill-with-docs) | Relentless interviewing that also produces ADRs and a glossary as it goes | External · mattpocock/skills |
 
-**Implementation**
+**1.2 Implementation** — write code against the agreed design, no re-litigating requirements
 
 | Name | One-liner | Notes |
 |---|---|---|
 | ⚙️ ⭐ [**implement**](https://github.com/mattpocock/skills/tree/main/skills/engineering/implement) | Implements an already-agreed spec or ticket without re-litigating requirements | External · mattpocock/skills |
 
-**Review & wrap-up**
+**1.3 Review & wrap-up** — pre-merge checks, cut over-engineering, reconcile docs and hand off
 
 | Name | One-liner | Notes |
 |---|---|---|
@@ -61,14 +64,14 @@ This repository collects Skills and Prompts I use for AI-assisted work. Some ent
 | 🧹 [**neat-freak**](#-neat-freak) | After a session, run `/neat` to reconcile your project docs, CLAUDE.md, and agent memory with the code | This repo · Original: 数字生命卡兹克 · [Article (Chinese)](https://mp.weixin.qq.com/s/tg1wd-iN2gWHWhXdY0faeg) |
 | 🤝 ⭐ [**handoff**](https://github.com/mattpocock/skills/tree/main/skills/productivity/handoff) | Compacts the current conversation into a handoff document for another agent or session | External · mattpocock/skills |
 
-**Writing & research**
+**2. Writing & research** — content production and research, outside the coding flow
 
 | Name | One-liner | Notes |
 |---|---|---|
 | ✍️ [**khazix-writer**](#-khazix-writer) | Makes the agent write long-form Chinese articles in the voice of 数字生命卡兹克 | This repo · Original: 数字生命卡兹克 · [Article (Chinese)](https://mp.weixin.qq.com/s/AtxGrii_K-nzkwUM9SNhEg) |
 | 🔭 [**hv-analysis**](#-hv-analysis) | Drop a product/company/concept into it and get a 10k–30k word PDF research report | This repo · Original: 数字生命卡兹克 · [Article (Chinese)](https://mp.weixin.qq.com/s/Y_uRMYBmdLWUPnz_ac7jWA) |
 
-**Tools & system**
+**3. Tools & system** — runtime, disk, skill discovery and other utilities
 
 | Name | One-liner | Notes |
 |---|---|---|

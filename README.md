@@ -29,16 +29,19 @@
 
 ### Skills
 
-> 按开发阶段分类。标「外部」的不在本仓库，点备注里的链接去上游安装；其余可以直接克隆。
-> 表格里带 ⭐ 的是黄同学h 文中实际在用的组合，完整流程见 [ai-dev-workflow](#-ai-dev-workflowai-开发工作流)。
+> 按用途分三大类。第一类是完整的 AI 开发工作流，内部再按开发阶段细分；后两类是独立能力。
+> 标「外部」的不在本仓库，点备注里的链接去上游安装；其余可以直接克隆。
+> 带 ⭐ 的是黄同学h 文中实际在用的组合。
 
-**流程总览**
+**1. AI 开发工作流**
+
+> 从接到需求到合并交付的完整链路。流程本体是 `ai-dev-workflow`，下面三个阶段各配一组技能。
 
 | 名字 | 一句话 | 备注 |
 |---|---|---|
 | 🧭 [**ai-dev-workflow（AI 开发工作流）**](#-ai-dev-workflowai-开发工作流) | 拿到需求后按「对齐 → 沉淀 Spec → 实现 → 端到端自测 → 交叉审查」推进，内置五个思维快捷键；小改动可直接跳过流程 | 本仓库 · 参考：黄同学h · [X 原文](https://x.com/huangtongxueh/status/2108577165306687938) |
 
-**规划与需求**
+**1.1 规划与需求** — 把需求问清楚、把方案定下来，避免写错方向
 
 | 名字 | 一句话 | 备注 |
 |---|---|---|
@@ -46,13 +49,13 @@
 | 🔥 ⭐ [**grill-me（拷问我）**](#-grill-me拷问我) | 需求还不够清楚时，让 Agent 连续追问，把计划和设计里的分叉一个个问透 | 本仓库 · 原作 Matt Pocock · [MIT Notice](./grill-me/NOTICE) |
 | 📐 [**grill-with-docs**](https://github.com/mattpocock/skills/tree/main/skills/engineering/grill-with-docs) | 连续追问的同时把结论沉淀成 ADR 和术语表 | 外部 · mattpocock/skills |
 
-**实现**
+**1.2 实现** — 按已经确定的方案写代码，不再重复讨论需求
 
 | 名字 | 一句话 | 备注 |
 |---|---|---|
 | ⚙️ ⭐ [**implement**](https://github.com/mattpocock/skills/tree/main/skills/engineering/implement) | 按已经明确的 spec 或 issue 落地，不再重新讨论需求 | 外部 · mattpocock/skills |
 
-**审查与收尾**
+**1.3 审查与收尾** — 合并前检查、砍掉过度设计、整理文档与交接
 
 | 名字 | 一句话 | 备注 |
 |---|---|---|
@@ -61,14 +64,14 @@
 | 🧹 [**neat-freak（洁癖）**](#-neat-freak洁癖) | 干完活跑一下 `/neat`，自动把你这次改的东西跟项目文档、CLAUDE.md、Agent 记忆全部对齐 | 本仓库 · 原作：数字生命卡兹克 · [公众号文章](https://mp.weixin.qq.com/s/tg1wd-iN2gWHWhXdY0faeg) |
 | 🤝 ⭐ [**handoff**](https://github.com/mattpocock/skills/tree/main/skills/productivity/handoff) | 把当前会话压成交接文档，换 Agent 或换会话继续 | 外部 · mattpocock/skills |
 
-**写作与研究**
+**2. 写作与研究** — 内容生产与调研，不参与编码流程
 
 | 名字 | 一句话 | 备注 |
 |---|---|---|
 | ✍️ [**khazix-writer（卡兹克写作）**](#-khazix-writer卡兹克写作) | 装上之后，Agent 按数字生命卡兹克的口吻和节奏写公众号长文 | 本仓库 · 原作：数字生命卡兹克 · [公众号文章](https://mp.weixin.qq.com/s/AtxGrii_K-nzkwUM9SNhEg) |
 | 🔭 [**hv-analysis（横纵分析法）**](#-hv-analysis横纵分析法) | 想搞懂一个产品/公司/概念是怎么回事，丢给它，给你一份万字 PDF 研究报告 | 本仓库 · 原作：数字生命卡兹克 · [公众号文章](https://mp.weixin.qq.com/s/Y_uRMYBmdLWUPnz_ac7jWA) |
 
-**工具与系统**
+**3. 工具与系统** — 运行环境、磁盘、技能发现等辅助能力
 
 | 名字 | 一句话 | 备注 |
 |---|---|---|
