@@ -29,16 +29,52 @@
 
 ### Skills
 
+> 按开发阶段分类。标「外部」的不在本仓库，点备注里的链接去上游安装；其余可以直接克隆。
+> 表格里带 ⭐ 的是黄同学h 文中实际在用的组合，完整流程见 [ai-dev-workflow](#-ai-dev-workflowai-开发工作流)。
+
+**① 总流程**
+
 | 名字 | 一句话 | 备注 |
 |---|---|---|
-| 🧹 [**neat-freak（洁癖）**](#-neat-freak洁癖) | 干完活跑一下 `/neat`，自动把你这次改的东西跟项目文档、CLAUDE.md、Agent 记忆全部对齐 | 原作：数字生命卡兹克 · [公众号文章](https://mp.weixin.qq.com/s/tg1wd-iN2gWHWhXdY0faeg) |
-| 🔭 [**hv-analysis（横纵分析法）**](#-hv-analysis横纵分析法) | 想搞懂一个产品/公司/概念是怎么回事，丢给它，给你一份万字 PDF 研究报告 | 原作：数字生命卡兹克 · [公众号文章](https://mp.weixin.qq.com/s/Y_uRMYBmdLWUPnz_ac7jWA) |
-| ✍️ [**khazix-writer（卡兹克写作）**](#-khazix-writer卡兹克写作) | 装上之后，Agent 按数字生命卡兹克的口吻和节奏写公众号长文 | 原作：数字生命卡兹克 · [公众号文章](https://mp.weixin.qq.com/s/AtxGrii_K-nzkwUM9SNhEg) |
-| 🔥 [**grill-me（拷问我）**](#-grill-me拷问我) | 需求还不够清楚时，让 Agent 连续追问，把计划和设计里的分叉一个个问透 | 原作：Matt Pocock · [Source](https://github.com/mattpocock/skills/blob/main/skills/productivity/grill-me/SKILL.md) · [MIT Notice](./grill-me/NOTICE) |
-| 🧭 [**find-skills（技能发现）**](#-find-skills技能发现) | 不知道该装哪个 Skill 时，让 Agent 先去开放生态里帮你找、筛、推荐 | Skill |
-| 💬 [**wechat-article-fetcher（公众号文章抓取）**](#-wechat-article-fetcher公众号文章抓取) | 把微信公众号文章抓取、归档并导出为 Markdown，同时保存元数据、截图和图片副本 | Skill |
-| 🧹 [**disk-cleaner（磁盘清理）**](#-disk-cleaner磁盘清理) | C 盘/D 盘爆满时，用 WizTree 扫描 + AI 分析出一份分级清理方案，每项等你批准才动手，删前自动备份可回滚 | 原作：iziqing · [Source](https://github.com/iziqing/-disk-cleaner) · [MIT Notice](./disk-cleaner/NOTICE) |
-| 🧭 [**ai-dev-workflow（AI 开发工作流）**](#-ai-dev-workflowai-开发工作流) | 拿到需求后按「对齐 → 沉淀 Spec → 实现 → 端到端自测 → 交叉审查」推进，内置五个思维快捷键；小改动可直接跳过流程 | 参考：黄同学h · [X 原文](https://x.com/huangtongxueh/status/2108577165306687938) |
+| 🧭 [**ai-dev-workflow（AI 开发工作流）**](#-ai-dev-workflowai-开发工作流) | 拿到需求后按「对齐 → 沉淀 Spec → 实现 → 端到端自测 → 交叉审查」推进，内置五个思维快捷键；小改动可直接跳过流程 | 本仓库 · 参考：黄同学h · [X 原文](https://x.com/huangtongxueh/status/2108577165306687938) |
+
+**② 规划与需求**
+
+| 名字 | 一句话 | 备注 |
+|---|---|---|
+| 🧠 ⭐ [**think**](https://github.com/tw93/Waza/tree/main/plugins/waza/skills/think) | 把粗糙想法压成决策完整的方案，再交给实现 | 外部 · tw93/Waza |
+| 🔥 ⭐ [**grill-me（拷问我）**](#-grill-me拷问我) | 需求还不够清楚时，让 Agent 连续追问，把计划和设计里的分叉一个个问透 | 本仓库 · 原作 Matt Pocock · [MIT Notice](./grill-me/NOTICE) |
+| 📐 [**grill-with-docs**](https://github.com/mattpocock/skills/tree/main/skills/engineering/grill-with-docs) | 连续追问的同时把结论沉淀成 ADR 和术语表 | 外部 · mattpocock/skills |
+
+**③ 实现**
+
+| 名字 | 一句话 | 备注 |
+|---|---|---|
+| ⚙️ ⭐ [**implement**](https://github.com/mattpocock/skills/tree/main/skills/engineering/implement) | 按已经明确的 spec 或 issue 落地，不再重新讨论需求 | 外部 · mattpocock/skills |
+
+**④ 审查与收尾**
+
+| 名字 | 一句话 | 备注 |
+|---|---|---|
+| ✅ ⭐ [**check**](https://github.com/tw93/Waza/tree/main/plugins/waza/skills/check) | 对着验收标准审 diff、PR，处理合并与发布收尾 | 外部 · tw93/Waza |
+| 🪶 ⭐ [**ponytail**](https://github.com/DietrichGebert/ponytail) | 砍掉 AI 的过度设计，让 diff 小到能一眼看懂 | 外部 · DietrichGebert/ponytail |
+| 🧹 [**neat-freak（洁癖）**](#-neat-freak洁癖) | 干完活跑一下 `/neat`，自动把你这次改的东西跟项目文档、CLAUDE.md、Agent 记忆全部对齐 | 本仓库 · 原作：数字生命卡兹克 · [公众号文章](https://mp.weixin.qq.com/s/tg1wd-iN2gWHWhXdY0faeg) |
+| 🤝 ⭐ [**handoff**](https://github.com/mattpocock/skills/tree/main/skills/productivity/handoff) | 把当前会话压成交接文档，换 Agent 或换会话继续 | 外部 · mattpocock/skills |
+
+**⑤ 写作与研究**
+
+| 名字 | 一句话 | 备注 |
+|---|---|---|
+| ✍️ [**khazix-writer（卡兹克写作）**](#-khazix-writer卡兹克写作) | 装上之后，Agent 按数字生命卡兹克的口吻和节奏写公众号长文 | 本仓库 · 原作：数字生命卡兹克 · [公众号文章](https://mp.weixin.qq.com/s/AtxGrii_K-nzkwUM9SNhEg) |
+| 🔭 [**hv-analysis（横纵分析法）**](#-hv-analysis横纵分析法) | 想搞懂一个产品/公司/概念是怎么回事，丢给它，给你一份万字 PDF 研究报告 | 本仓库 · 原作：数字生命卡兹克 · [公众号文章](https://mp.weixin.qq.com/s/Y_uRMYBmdLWUPnz_ac7jWA) |
+
+**⑥ 工具与系统**
+
+| 名字 | 一句话 | 备注 |
+|---|---|---|
+| 🧭 [**find-skills（技能发现）**](#-find-skills技能发现) | 不知道该装哪个 Skill 时，让 Agent 先去开放生态里帮你找、筛、推荐 | 本仓库 |
+| 💬 [**wechat-article-fetcher（公众号文章抓取）**](#-wechat-article-fetcher公众号文章抓取) | 把微信公众号文章抓取、归档并导出为 Markdown，同时保存元数据、截图和图片副本 | 本仓库 |
+| 🧹 [**disk-cleaner（磁盘清理）**](#-disk-cleaner磁盘清理) | C 盘/D 盘爆满时，用 WizTree 扫描 + AI 分析出一份分级清理方案，每项等你批准才动手，删前自动备份可回滚 | 本仓库 · 原作：iziqing · [Source](https://github.com/iziqing/-disk-cleaner) · [MIT Notice](./disk-cleaner/NOTICE) |
 
 ### Prompts
 
@@ -59,6 +95,8 @@
 ```
 
 把 `<skill-name>` 换成你想装的那个，比如 `neat-freak`、`hv-analysis`、`khazix-writer`、`grill-me`、`find-skills`、`wechat-article-fetcher`、`disk-cleaner`、`ai-dev-workflow`。Agent 会自己 clone 到对应目录，不用你操心路径。
+
+标「外部」的技能不在本仓库（`think`、`check`、`implement`、`handoff`、`grill-with-docs`、`ponytail`），按索引里备注的上游链接安装，避免重复维护。
 
 ---
 

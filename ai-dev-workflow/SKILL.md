@@ -110,12 +110,14 @@ description: >
 
 | 阶段 | 配套 Skill | 怎么配 |
 |---|---|---|
-| 需求还没对齐 | `grill-me` | 先问出目标、边界、取舍 |
-| 方案设计 / 判断值不值得做 | `think` | 产出决策完整的方案 |
-| 方案评审 / Code Review | `check` · `code-review` | `check` 对照验收标准；`code-review` 查规范和 spec 符合度 |
-| 清理过度设计 | `ponytail` | 实现完成后跑 |
-| 模块边界设计 | `codebase-design` · `domain-modeling` | 划边界、沉淀 ADR / 术语表 |
+| 需求还没对齐 | [`grill-me`](https://github.com/mattpocock/skills/tree/main/skills/productivity/grill-me) | 先问出目标、边界、取舍 |
+| 方案设计 / 判断值不值得做 | [`think`](https://github.com/tw93/Waza/tree/main/plugins/waza/skills/think) | 产出决策完整的方案 |
+| 方案评审 / Code Review | [`check`](https://github.com/tw93/Waza/tree/main/plugins/waza/skills/check) · [`code-review`](https://github.com/mattpocock/skills/tree/main/skills/engineering/code-review) | `check` 对照验收标准；`code-review` 查规范和 spec 符合度 |
+| 清理过度设计 | [`ponytail`](https://github.com/DietrichGebert/ponytail) | 实现完成后跑 |
+| 模块边界设计 | [`codebase-design`](https://github.com/mattpocock/skills/tree/main/skills/engineering/codebase-design) · [`domain-modeling`](https://github.com/mattpocock/skills/tree/main/skills/engineering/domain-modeling) | 划边界、沉淀 ADR / 术语表 |
 | 消融实验 | 无现成 Skill | 需要真实可跑的性能测试环境 |
+
+以上均为外部技能，不在本仓库；安装与分类见 [README 索引](../../README.md#-skills)。
 
 完整可复制的 prompt 模板、示例和组合用法见 [思维快捷键](../prompts/思维快捷键.md)。
 

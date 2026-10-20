@@ -29,16 +29,52 @@ This repository collects Skills and Prompts I use for AI-assisted work. Some ent
 
 ### Skills
 
+> Grouped by development stage. Entries marked **External** live upstream — follow the link in Notes to install them. Everything else can be cloned from this repo.
+> Rows marked ⭐ are the set 黄同学h actually uses; the full flow is in [ai-dev-workflow](#-ai-dev-workflow).
+
+**① Overall flow**
+
 | Name | One-liner | Notes |
 |---|---|---|
-| 🧹 [**neat-freak**](#-neat-freak) | After a session, run `/neat` to reconcile your project docs, CLAUDE.md, and agent memory with the code | Original: 数字生命卡兹克 · [Article (Chinese)](https://mp.weixin.qq.com/s/tg1wd-iN2gWHWhXdY0faeg) |
-| 🔭 [**hv-analysis**](#-hv-analysis) | Drop a product/company/concept into it and get a 10k–30k word PDF research report | Original: 数字生命卡兹克 · [Article (Chinese)](https://mp.weixin.qq.com/s/Y_uRMYBmdLWUPnz_ac7jWA) |
-| ✍️ [**khazix-writer**](#-khazix-writer) | Makes the agent write long-form Chinese articles in the voice of 数字生命卡兹克 | Original: 数字生命卡兹克 · [Article (Chinese)](https://mp.weixin.qq.com/s/AtxGrii_K-nzkwUM9SNhEg) |
-| 🔥 [**grill-me**](#-grill-me) | Makes the agent relentlessly question your plan or design until the requirements are clear | Original: Matt Pocock · [Source](https://github.com/mattpocock/skills/blob/main/skills/productivity/grill-me/SKILL.md) · [MIT Notice](./grill-me/NOTICE) |
-| 🧭 [**find-skills**](#-find-skills) | Helps the agent search, vet, and recommend skills from the open ecosystem | Skill |
-| 💬 [**wechat-article-fetcher**](#-wechat-article-fetcher) | Fetches and archives WeChat Official Account articles as Markdown, with metadata, screenshots, and image copies | Skill |
-| 🧹 [**disk-cleaner**](#-disk-cleaner) | When C:/D: is full, scans with WizTree and uses AI analysis to produce a tiered cleanup plan; every item waits for your approval before acting, with automatic backup and rollback | Original: iziqing · [Source](https://github.com/iziqing/-disk-cleaner) · [MIT Notice](./disk-cleaner/NOTICE) |
-| 🧭 [**ai-dev-workflow**](#-ai-dev-workflow) | Runs requirements through align → spec → implement → end-to-end self-test → cross-review, with five "thinking shortcuts" built in; small changes can skip the flow | Reference: 黄同学h · [Original post](https://x.com/huangtongxueh/status/2108577165306687938) |
+| 🧭 [**ai-dev-workflow**](#-ai-dev-workflow) | Runs requirements through align → spec → implement → end-to-end self-test → cross-review, with five "thinking shortcuts" built in; small changes can skip the flow | This repo · Reference: 黄同学h · [Original post](https://x.com/huangtongxueh/status/2108577165306687938) |
+
+**② Planning & requirements**
+
+| Name | One-liner | Notes |
+|---|---|---|
+| 🧠 ⭐ [**think**](https://github.com/tw93/Waza/tree/main/plugins/waza/skills/think) | Turns a rough idea into a decision-complete plan before coding | External · tw93/Waza |
+| 🔥 ⭐ [**grill-me**](#-grill-me) | Makes the agent relentlessly question your plan or design until the requirements are clear | This repo · Original: Matt Pocock · [MIT Notice](./grill-me/NOTICE) |
+| 📐 [**grill-with-docs**](https://github.com/mattpocock/skills/tree/main/skills/engineering/grill-with-docs) | Relentless interviewing that also produces ADRs and a glossary as it goes | External · mattpocock/skills |
+
+**③ Implementation**
+
+| Name | One-liner | Notes |
+|---|---|---|
+| ⚙️ ⭐ [**implement**](https://github.com/mattpocock/skills/tree/main/skills/engineering/implement) | Implements an already-agreed spec or ticket without re-litigating requirements | External · mattpocock/skills |
+
+**④ Review & wrap-up**
+
+| Name | One-liner | Notes |
+|---|---|---|
+| ✅ ⭐ [**check**](https://github.com/tw93/Waza/tree/main/plugins/waza/skills/check) | Reviews diffs and PRs against acceptance criteria, then handles merge and release follow-through | External · tw93/Waza |
+| 🪶 ⭐ [**ponytail**](https://github.com/DietrichGebert/ponytail) | Strips AI over-engineering so the diff stays small enough to read | External · DietrichGebert/ponytail |
+| 🧹 [**neat-freak**](#-neat-freak) | After a session, run `/neat` to reconcile your project docs, CLAUDE.md, and agent memory with the code | This repo · Original: 数字生命卡兹克 · [Article (Chinese)](https://mp.weixin.qq.com/s/tg1wd-iN2gWHWhXdY0faeg) |
+| 🤝 ⭐ [**handoff**](https://github.com/mattpocock/skills/tree/main/skills/productivity/handoff) | Compacts the current conversation into a handoff document for another agent or session | External · mattpocock/skills |
+
+**⑤ Writing & research**
+
+| Name | One-liner | Notes |
+|---|---|---|
+| ✍️ [**khazix-writer**](#-khazix-writer) | Makes the agent write long-form Chinese articles in the voice of 数字生命卡兹克 | This repo · Original: 数字生命卡兹克 · [Article (Chinese)](https://mp.weixin.qq.com/s/AtxGrii_K-nzkwUM9SNhEg) |
+| 🔭 [**hv-analysis**](#-hv-analysis) | Drop a product/company/concept into it and get a 10k–30k word PDF research report | This repo · Original: 数字生命卡兹克 · [Article (Chinese)](https://mp.weixin.qq.com/s/Y_uRMYBmdLWUPnz_ac7jWA) |
+
+**⑥ Tools & system**
+
+| Name | One-liner | Notes |
+|---|---|---|
+| 🧭 [**find-skills**](#-find-skills) | Helps the agent search, vet, and recommend skills from the open ecosystem | This repo |
+| 💬 [**wechat-article-fetcher**](#-wechat-article-fetcher) | Fetches and archives WeChat Official Account articles as Markdown, with metadata, screenshots, and image copies | This repo |
+| 🧹 [**disk-cleaner**](#-disk-cleaner) | When C:/D: is full, scans with WizTree and uses AI analysis to produce a tiered cleanup plan; every item waits for your approval before acting, with automatic backup and rollback | This repo · Original: iziqing · [Source](https://github.com/iziqing/-disk-cleaner) · [MIT Notice](./disk-cleaner/NOTICE) |
 
 ### Prompts
 
@@ -59,6 +95,8 @@ Install this skill: https://github.com/335812350/cyber-skills/tree/main/<skill-n
 ```
 
 Replace `<skill-name>` with the one you want — e.g. `neat-freak`, `hv-analysis`, `khazix-writer`, `grill-me`, `find-skills`, `wechat-article-fetcher`, `disk-cleaner`, `ai-dev-workflow`. The agent will clone it into the right directory for you.
+
+Skills marked **External** (`think`, `check`, `implement`, `handoff`, `grill-with-docs`, `ponytail`) are not in this repo — install them from the upstream links in the index so there is only one copy to maintain.
 
 ---
 
