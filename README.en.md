@@ -7,7 +7,7 @@
 #### A collection of AI skills and prompts I organize and use
 
 [![License](https://img.shields.io/badge/License-MIT-3B82F6?style=for-the-badge)](./LICENSE)
-[![Skills](https://img.shields.io/badge/Skills-7-10B981?style=for-the-badge)](#-skills)
+[![Skills](https://img.shields.io/badge/Skills-8-10B981?style=for-the-badge)](#-skills)
 [![Prompts](https://img.shields.io/badge/Prompts-2-F59E0B?style=for-the-badge)](#-prompts)
 [![AgentSkills](https://img.shields.io/badge/AgentSkills-Standard-8B5CF6?style=for-the-badge)](https://agentskills.io)
 
@@ -38,6 +38,7 @@ This repository collects Skills and Prompts I use for AI-assisted work. Some ent
 | 🧭 [**find-skills**](#-find-skills) | Helps the agent search, vet, and recommend skills from the open ecosystem | Skill |
 | 💬 [**wechat-article-fetcher**](#-wechat-article-fetcher) | Fetches and archives WeChat Official Account articles as Markdown, with metadata, screenshots, and image copies | Skill |
 | 🧹 [**disk-cleaner**](#-disk-cleaner) | When C:/D: is full, scans with WizTree and uses AI analysis to produce a tiered cleanup plan; every item waits for your approval before acting, with automatic backup and rollback | Original: iziqing · [Source](https://github.com/iziqing/-disk-cleaner) · [MIT Notice](./disk-cleaner/NOTICE) |
+| 🧭 [**ai-dev-workflow**](#-ai-dev-workflow) | Runs requirements through align → spec → implement → end-to-end self-test → cross-review, with five "thinking shortcuts" built in; small changes can skip the flow | Reference: 黄同学h · [Original post](https://x.com/huangtongxueh/status/2108577165306687938) |
 
 ### Prompts
 
@@ -56,7 +57,7 @@ In any agent that supports Skills (Claude Code, Codex, OpenClaw…), just say:
 Install this skill: https://github.com/335812350/cyber-skills/tree/main/<skill-name>
 ```
 
-Replace `<skill-name>` with the one you want — e.g. `neat-freak`, `hv-analysis`, `khazix-writer`, `grill-me`, `find-skills`, `wechat-article-fetcher`, `disk-cleaner`. The agent will clone it into the right directory for you.
+Replace `<skill-name>` with the one you want — e.g. `neat-freak`, `hv-analysis`, `khazix-writer`, `grill-me`, `find-skills`, `wechat-article-fetcher`, `disk-cleaner`, `ai-dev-workflow`. The agent will clone it into the right directory for you.
 
 ---
 
@@ -299,6 +300,50 @@ When your C: or D: drive is full, the agent scans it with WizTree, runs two laye
 Requires Windows, administrator privileges (for the automatic WizTree scan), and Python. See [SKILL.md](./disk-cleaner/SKILL.md) for the full workflow.
 
 → [SKILL.md](./disk-cleaner/SKILL.md) · [Source](https://github.com/iziqing/-disk-cleaner) · [MIT Notice](./disk-cleaner/NOTICE)
+
+</td></tr>
+</table>
+
+---
+<table>
+<tr><td>
+
+### 🧭 ai-dev-workflow
+
+> Reference: 黄同学h, "入职大厂两个月，我的 AI 开发心得". An executable distillation of the original methodology, not the article text.
+
+> *"When the model changes, the workflow has to shed weight too."*
+
+A development workflow for **iterating on an existing project**. It does not start by writing code — it first decides whether the change is worth running a process at all:
+
+- One line, a field, a validation rule → just do it, skip the flow
+- A single-module feature → align → implement → self-test → self-review
+- Cross-module or architectural → run all five steps
+
+**The five steps**
+
+1. **Align** — feed real material (PRD, meeting notes, chat logs) and keep asking about goals, boundaries, and trade-offs. Stop when the remaining questions no longer change the direction of implementation.
+2. **Write it down** — put the problem, scope, key decisions, and acceptance criteria into a spec or `CONTEXT.md`.
+3. **Implement** — split complex work into independently acceptable issues; only genuinely independent parts go to parallel subagents.
+4. **Self-test end to end** — one-command environments, the ability to drive the real business flow, read-only DB and log access, and the repeatable parts packaged as scripts or a CLI. **Tools provide evidence; they do not define the correct answer.**
+5. **Review** — acceptance criteria before test results; focus on permissions, concurrency, retries, consistency, migrations and rollback; re-check new abstractions with Occam's razor.
+
+**Five built-in thinking shortcuts**
+
+First principles · Adversarial review · Ablation · Occam's razor · High cohesion / low coupling — each with a sentence you can say verbatim, used to specify *how* to think rather than a fixed script.
+
+**Good for**
+
+- Fuzzy requirements or competing designs that need pressure-testing first
+- Letting the agent run end-to-end tests instead of piling up unit tests
+- Reviewing AI-written code without reading every line
+
+**Not for**
+
+- One-off scripts, config edits, copy changes — anything with no real uncertainty
+- Teams with no test environment yet; the skill tells you what to build, it cannot build it
+
+→ [SKILL.md](./ai-dev-workflow/SKILL.md) · [Full notes](./ai-dev-workflow/references/huang-ai-dev-notes.md) · [Original post](https://x.com/huangtongxueh/status/2108577165306687938)
 
 </td></tr>
 </table>

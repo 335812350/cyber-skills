@@ -7,7 +7,7 @@
 #### 我整理和使用的一些 Skills 和 Prompt，统一放在这里
 
 [![License](https://img.shields.io/badge/License-MIT-3B82F6?style=for-the-badge)](./LICENSE)
-[![Skills](https://img.shields.io/badge/Skills-7-10B981?style=for-the-badge)](#-skills)
+[![Skills](https://img.shields.io/badge/Skills-8-10B981?style=for-the-badge)](#-skills)
 [![Prompts](https://img.shields.io/badge/Prompts-2-F59E0B?style=for-the-badge)](#-prompts)
 [![AgentSkills](https://img.shields.io/badge/AgentSkills-Standard-8B5CF6?style=for-the-badge)](https://agentskills.io)
 
@@ -38,6 +38,7 @@
 | 🧭 [**find-skills（技能发现）**](#-find-skills技能发现) | 不知道该装哪个 Skill 时，让 Agent 先去开放生态里帮你找、筛、推荐 | Skill |
 | 💬 [**wechat-article-fetcher（公众号文章抓取）**](#-wechat-article-fetcher公众号文章抓取) | 把微信公众号文章抓取、归档并导出为 Markdown，同时保存元数据、截图和图片副本 | Skill |
 | 🧹 [**disk-cleaner（磁盘清理）**](#-disk-cleaner磁盘清理) | C 盘/D 盘爆满时，用 WizTree 扫描 + AI 分析出一份分级清理方案，每项等你批准才动手，删前自动备份可回滚 | 原作：iziqing · [Source](https://github.com/iziqing/-disk-cleaner) · [MIT Notice](./disk-cleaner/NOTICE) |
+| 🧭 [**ai-dev-workflow（AI 开发工作流）**](#-ai-dev-workflowai-开发工作流) | 拿到需求后按「对齐 → 沉淀 Spec → 实现 → 端到端自测 → 交叉审查」推进，内置五个思维快捷键；小改动可直接跳过流程 | 参考：黄同学h · [X 原文](https://x.com/huangtongxueh/status/2108577165306687938) |
 
 ### Prompts
 
@@ -56,7 +57,7 @@
 帮我安装这个 skill：https://github.com/335812350/cyber-skills/tree/main/<skill-name>
 ```
 
-把 `<skill-name>` 换成你想装的那个，比如 `neat-freak`、`hv-analysis`、`khazix-writer`、`grill-me`、`find-skills`、`wechat-article-fetcher`、`disk-cleaner`。Agent 会自己 clone 到对应目录，不用你操心路径。
+把 `<skill-name>` 换成你想装的那个，比如 `neat-freak`、`hv-analysis`、`khazix-writer`、`grill-me`、`find-skills`、`wechat-article-fetcher`、`disk-cleaner`、`ai-dev-workflow`。Agent 会自己 clone 到对应目录，不用你操心路径。
 
 ---
 
@@ -301,6 +302,50 @@ C 盘 / D 盘爆满时，让 Agent 用 WizTree 快速扫描磁盘，再结合模
 需要 Windows、管理员权限（用于 WizTree 自动扫描）和 Python。流程细节见 [SKILL.md](./disk-cleaner/SKILL.md)。
 
 → [SKILL.md](./disk-cleaner/SKILL.md) · [Source](https://github.com/iziqing/-disk-cleaner) · [MIT Notice](./disk-cleaner/NOTICE)
+
+</td></tr>
+</table>
+
+---
+<table>
+<tr><td>
+
+### 🧭 ai-dev-workflow（AI 开发工作流）
+
+> 参考：黄同学h《入职大厂两个月，我的 AI 开发心得》。以下是按原文方法论提炼的执行版，非原文全文。
+
+> *"模型变了，工作流也要跟着做减法。"*
+
+一套面向**已有项目迭代**的开发流程。它不会一上来就写代码，而是先判断这次改动值不值得走流程：
+
+- 改一行、改个字段 → 直接改 + 自测，跳过流程
+- 单模块小需求 → 对齐 → 实现 → 自测 → 自查
+- 跨模块 / 有架构决策 → 走完整五步
+
+**五步**
+
+1. **对齐** — 喂真实材料（PRD、会议纪要、聊天记录），连续追问目标、边界和取舍。停止条件是：剩下的问题已经不会显著改变实现方向。
+2. **沉淀** — 结论写进 Spec / `CONTEXT.md`，只记问题、范围、关键决策、验收标准。
+3. **实现** — 复杂需求拆成可独立验收的 Issue；只有能独立推进的才交给 subagent 并行。
+4. **自测** — 给 Agent 一个能跑通的端到端环境：一键起环境、能操作业务、能查库表和日志、流程固化成 CLI/Skill。**工具提供证据，不定义正确答案。**
+5. **审查** — 先看验收标准再看测试；重点检查权限、并发、重试、一致性、迁移回滚；新增抽象再过一遍奥卡姆剃刀。
+
+**内置五个思维快捷键**
+
+第一性原理 · 对抗性审查 · 消融实验 · 奥卡姆剃刀 · 高内聚低耦合。每种都附了可以直接说出口的短句，用来指定"以什么方式思考"，而不是写死一套流程。
+
+**适合**
+
+- 需求说不清、方案有分歧，想先把问题问透再动手
+- 想让 AI 自己跑端到端测试，而不是只堆单元测试
+- Review AI 写的代码，但不想逐行读完
+
+**不适合**
+
+- 一次性脚本、改配置、改文案这类没有不确定性的任务
+- 团队还没有测试环境——这个技能只能告诉你该搭什么，搭不了环境本身
+
+→ [SKILL.md](./ai-dev-workflow/SKILL.md) · [完整笔记](./ai-dev-workflow/references/huang-ai-dev-notes.md) · [X 原文](https://x.com/huangtongxueh/status/2108577165306687938)
 
 </td></tr>
 </table>
