@@ -8,7 +8,7 @@
 
 [![License](https://img.shields.io/badge/License-MIT-3B82F6?style=for-the-badge)](./LICENSE)
 [![Skills](https://img.shields.io/badge/Skills-8-10B981?style=for-the-badge)](#-skills)
-[![Prompts](https://img.shields.io/badge/Prompts-2-F59E0B?style=for-the-badge)](#-prompts)
+[![Prompts](https://img.shields.io/badge/Prompts-3-F59E0B?style=for-the-badge)](#-prompts)
 [![AgentSkills](https://img.shields.io/badge/AgentSkills-Standard-8B5CF6?style=for-the-badge)](https://agentskills.io)
 
 ![Claude Code](https://img.shields.io/badge/Claude_Code-Skill-D97706?style=flat-square&logo=anthropic&logoColor=white)
@@ -46,6 +46,7 @@ This repository collects Skills and Prompts I use for AI-assisted work. Some ent
 |---|---|---|
 | 🔭 [**hv-analysis (Prompt edition)**](#-hv-analysis-prompt-edition) | Lighter version of the skill above — paste it into any Deep Research model | Original: 数字生命卡兹克 · [Article (Chinese)](https://mp.weixin.qq.com/s/Y_uRMYBmdLWUPnz_ac7jWA) |
 | 🧰 [**Codex project development system prompt**](#-codex-project-development-system-prompt) | Adds a plan-review-implement workflow for larger Codex coding tasks | [Prompt](./prompts/codex项目开发系统提示词.md) |
+| 🧠 [**Thinking shortcuts**](#-thinking-shortcuts) | Five methodology prompts: first principles / adversarial review / ablation / Occam's razor / high cohesion, with companion skills | Reference: 黄同学h · [Original post](https://x.com/huangtongxueh/status/2108577165306687938) |
 
 ---
 
@@ -383,6 +384,54 @@ It asks the agent to detect large tasks, create `./md/plan-{feature}-{date}.md`,
 Useful when you want stronger engineering guardrails around complex project changes instead of letting the agent jump straight into code.
 
 → [codex项目开发系统提示词.md](./prompts/codex项目开发系统提示词.md)
+
+</td></tr>
+</table>
+
+<table>
+<tr><td>
+
+### 🧠 Thinking shortcuts
+
+> Reference: 黄同学h, "入职大厂两个月，我的 AI 开发心得". A distilled version of the methodology prompts, with the original examples.
+
+> *"Instead of hard-coding a full thinking process, tell the model how to think."*
+
+Five sentences, each switching to a different mode of thinking. Copy one and replace the placeholder:
+
+| Method | Prompt |
+|---|---|
+| **First principles** | `Do not keep designing around "<the existing plan>". Start from first principles: why is this a problem, and what is the minimal necessary solution?` |
+| **Adversarial review** | `Run an adversarial review of this design. Prioritize counterexamples that could overturn its core assumptions.` |
+| **Ablation** | `Design ablation experiments for these optimizations and determine where the real gain comes from.` |
+| **Occam's razor** | `Re-examine this design with Occam's razor and remove every mechanism that is not necessary to meet the requirements.` |
+| **High cohesion, low coupling** | `Review the responsibility boundary of <ServiceName> under high cohesion / low coupling. Do not split for the sake of splitting.` |
+
+**Why short prompts work**: these methodologies are already heavily represented in training data. The model does not lack knowledge of *how* to think — it only needs you to pick which way. A few hundred lines of workflow often just makes the model walk the script even when a step is unnecessary.
+
+**Combined**
+
+```
+Start from first principles, run an adversarial review of the current design, verify core
+mechanisms with ablation experiments, apply Occam's razor, and keep the code high-cohesion.
+```
+
+Five cognitive moves: redefine the problem → attack the assumptions → verify the contribution → remove complexity → clean up boundaries.
+
+**Companion skills**
+
+| Stage | Skill |
+|---|---|
+| Requirements not aligned yet | `grill-me` |
+| Design / is it worth building | `think` |
+| Design review / code review | `check` or `code-review` |
+| Removing over-engineering | `ponytail` |
+| Module boundaries | `codebase-design` or `domain-modeling` |
+| Ablation | None yet — needs a real, runnable performance harness |
+
+Full templates, original examples and when-to-use notes are in the file.
+
+→ [思维快捷键.md](./prompts/思维快捷键.md) · [AI dev workflow](./ai-dev-workflow/SKILL.md) · [Original post](https://x.com/huangtongxueh/status/2108577165306687938)
 
 </td></tr>
 </table>

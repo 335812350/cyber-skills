@@ -8,7 +8,7 @@
 
 [![License](https://img.shields.io/badge/License-MIT-3B82F6?style=for-the-badge)](./LICENSE)
 [![Skills](https://img.shields.io/badge/Skills-8-10B981?style=for-the-badge)](#-skills)
-[![Prompts](https://img.shields.io/badge/Prompts-2-F59E0B?style=for-the-badge)](#-prompts)
+[![Prompts](https://img.shields.io/badge/Prompts-3-F59E0B?style=for-the-badge)](#-prompts)
 [![AgentSkills](https://img.shields.io/badge/AgentSkills-Standard-8B5CF6?style=for-the-badge)](https://agentskills.io)
 
 ![Claude Code](https://img.shields.io/badge/Claude_Code-Skill-D97706?style=flat-square&logo=anthropic&logoColor=white)
@@ -46,6 +46,7 @@
 |---|---|---|
 | 🔭 [**横纵分析法（Prompt 版）**](#-横纵分析法prompt-版) | 上面那个 Skill 的轻量版，复制粘贴到任何 Deep Research 模型里就能跑 | 原作：数字生命卡兹克 · [公众号文章](https://mp.weixin.qq.com/s/Y_uRMYBmdLWUPnz_ac7jWA) |
 | 🧰 [**Codex 项目开发系统提示词**](#-codex-项目开发系统提示词) | 给 Codex 项目开发加一套“大型任务先规划、评审、再实现”的流程约束 | [Prompt](./prompts/codex项目开发系统提示词.md) |
+| 🧠 [**思维快捷键**](#-思维快捷键) | 五句方法论 Prompt：第一性原理 / 对抗性审查 / 消融实验 / 奥卡姆剃刀 / 高内聚低耦合，附配套技能映射 | 参考：黄同学h · [X 原文](https://x.com/huangtongxueh/status/2108577165306687938) |
 
 ---
 
@@ -385,6 +386,55 @@ C 盘 / D 盘爆满时，让 Agent 用 WizTree 快速扫描磁盘，再结合模
 适合需要更强工程约束的项目协作场景，避免 Agent 直接开写复杂需求，最后才发现方案不对。
 
 → [codex项目开发系统提示词.md](./prompts/codex项目开发系统提示词.md)
+
+</td></tr>
+</table>
+
+<table>
+<tr><td>
+
+### 🧠 思维快捷键
+
+> 参考：黄同学h《入职大厂两个月，我的 AI 开发心得》。以下为方法论 Prompt 的提炼版，附原文示例。
+
+> *"与其给模型写死一套完整的思考流程，不如告诉它应该以什么方式思考。"*
+
+五句话，分别切换五种思考方式。每句都能直接复制，把括号里的内容换掉即可：
+
+| 方法 | 一句话 Prompt |
+|---|---|
+| **第一性原理** | `不要基于「<既定方案>」继续设计。从第一性原理分析这个问题，以及最小必要的解决方案。` |
+| **对抗性审查** | `对这个方案做一次对抗性审查，优先寻找能推翻核心假设的反例。` |
+| **消融实验** | `给这几个优化设计消融实验，判断真正的收益来自哪里。` |
+| **奥卡姆剃刀** | `用奥卡姆剃刀重新审查这个设计，在满足需求的前提下删除所有非必要机制。` |
+| **高内聚低耦合** | `按高内聚、低耦合原则审查 <服务名> 的职责边界，不要为了拆而拆。` |
+
+**为什么短句有效**：这些方法论在训练数据里已经高度标准化。模型不缺"怎么想"的知识，
+缺的只是你指定这次用哪一种。手写几百行 Workflow，模型反而会沿着流程空转。
+
+**组合用法**
+
+```
+从第一性原理重新分析，对当前方案做对抗性审查；核心机制必须通过消融实验验证；
+方案遵循奥卡姆剃刀，代码保持高内聚、低耦合。
+```
+
+对应五种认知动作：重新定义问题 → 攻击假设 → 验证贡献 → 删除复杂度 → 整理边界。
+
+**配套 Skill**
+
+| 阶段 | 配哪个 |
+|---|---|
+| 需求还没对齐 | `grill-me` |
+| 方案设计 / 判断值不值得做 | `think` |
+| 方案评审 / Code Review | `check` 或 `code-review` |
+| 清理过度设计 | `ponytail` |
+| 模块边界设计 | `codebase-design` 或 `domain-modeling` |
+| 消融实验 | 无现成 Skill，需要真实可跑的性能测试环境 |
+
+完整的模板、原文示例和适用场景见文件。
+
+→ [思维快捷键.md](./prompts/思维快捷键.md) · [AI 开发工作流](./ai-dev-workflow/SKILL.md) · [X 原文](https://x.com/huangtongxueh/status/2108577165306687938)
 
 </td></tr>
 </table>

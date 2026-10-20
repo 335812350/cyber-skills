@@ -104,9 +104,24 @@ description: >
 - 只给 Agent 加约束，不定减；模型升级后旧约束没有清理。
 - 代码和测试互相自洽就认为没问题——它们可能一起误解了需求。
 
+## 配套技能
+
+这些 Prompt 负责「怎么想」，技能负责「怎么执行」。按阶段配：
+
+| 阶段 | 配套 Skill | 怎么配 |
+|---|---|---|
+| 需求还没对齐 | `grill-me` | 先问出目标、边界、取舍 |
+| 方案设计 / 判断值不值得做 | `think` | 产出决策完整的方案 |
+| 方案评审 / Code Review | `check` · `code-review` | `check` 对照验收标准；`code-review` 查规范和 spec 符合度 |
+| 清理过度设计 | `ponytail` | 实现完成后跑 |
+| 模块边界设计 | `codebase-design` · `domain-modeling` | 划边界、沉淀 ADR / 术语表 |
+| 消融实验 | 无现成 Skill | 需要真实可跑的性能测试环境 |
+
+完整可复制的 prompt 模板、示例和组合用法见 [思维快捷键](../prompts/思维快捷键.md)。
+
 ## 参考
 
 - 本文方法论提炼自黄同学h《入职大厂两个月，我的 AI 开发心得》：
   [X 原文](https://x.com/huangtongxueh/status/2108577165306687938) ·
   [完整笔记](./references/huang-ai-dev-notes.md)
-- 配套技能建议：需求澄清用 `grill-me`，过度设计用 `ponytail`，MR 前审查用 `check`。
+- 五个方法论 Prompt 的完整版：[思维快捷键](../prompts/思维快捷键.md)
