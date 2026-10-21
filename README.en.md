@@ -327,6 +327,17 @@ A browser built for AI agents — not a skill. Each agent gets an isolated Space
 - **Real logged-in state**: on first launch it can migrate your Chrome data, so agents inherit your sessions, cookies and extensions.
 - **Strong snapshots**: kernel-level customization handles deeply nested iframes that break other tools.
 
+**Common uses**
+
+- **Reading WeChat articles**: open an `mp.weixin.qq.com` link, pull the body with `snapshot()` or `page.evaluate()`, and let the agent summarize or archive it as Markdown. Pairs well with this repo's [wechat-article-fetcher](#-wechat-article-fetcher).
+- **Downloading Douyin / video-channel clips**: open the video page, get the real playback URL with `page.evaluate()`, then fetch the bytes with `page.fetch()` and write them to disk from Node.
+- **Scraping pages behind a login**: reuse your signed-in session for dashboards, reports, wikis and paid content without re-authenticating or copying cookies.
+- **Parallel collection**: one Space per site or lead, several running at once without interfering — e.g. scrape competitor prices while collecting comments.
+- **End-to-end testing**: let the agent walk through signup, checkout, or a payment sandbox and capture evidence with `screenshot()` and `snapshot()`.
+- **Scheduled checks**: pair with the agent's scheduler to watch pages for changes, price updates, or new comments.
+
+> Respect platform terms and copyright when downloading or bulk-scraping. For write actions such as posting, ordering or deleting, have the agent stop and wait for your confirmation.
+
 **Relationship to skills**
 
 It ships an `ego-browser` skill, written into each agent's skills directory when you install the app. Or install just the skill: `npx skills add citrolabs/ego-lite`.

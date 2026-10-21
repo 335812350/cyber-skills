@@ -329,6 +329,17 @@ sync up          # English
 - **复用真实登录态**：首次启动可迁移 Chrome 数据，Agent 直接拿到登录状态、Cookie 和扩展。
 - **Snapshot 质量高**：内核级定制，深层嵌套 iframe 也能稳定处理。
 
+**常见用法**
+
+- **阅读公众号文章**：打开 `mp.weixin.qq.com` 链接，用 `snapshot()` 或 `page.evaluate()` 取正文，交给 Agent 总结、归档成 Markdown。配合本仓库的 [wechat-article-fetcher](#-wechat-article-fetcher公众号文章抓取) 效果更好。
+- **下载抖音 / 视频号视频**：打开视频页，用 `page.evaluate()` 拿到真实播放地址，再用 `page.fetch()` 取回字节，用 Node 写到本地。
+- **抓取需要登录的页面**：复用你已登录的会话读后台、报表、知识库、付费内容，不用重新扫码或搬运 Cookie。
+- **多任务并行采集**：一个 Space 跑一个站点或一条线索，多个 Space 同时跑，互不干扰；比如一边抓竞品价格，一边整理评论。
+- **端到端测试**：让 Agent 走完注册、下单、支付沙箱等真实流程，用 `screenshot()` 和 `snapshot()` 留下证据。
+- **定时巡检**：配合 Agent 的定时任务，批量检查页面是否变化、价格是否更新、有没有新评论。
+
+> 下载和批量采集注意平台条款与版权；发帖、下单、删除这类写操作，建议让 Agent 先停下来等你确认。
+
 **和 Skill 的关系**
 
 它自带 `ego-browser` Skill。安装 app 时会自动写进各个 Agent 的 skills 目录；也可以只装 Skill：`npx skills add citrolabs/ego-lite`。
