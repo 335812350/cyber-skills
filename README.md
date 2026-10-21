@@ -76,6 +76,7 @@
 
 | 名字 | 一句话 | 备注 |
 |---|---|---|
+| 🌐 [**ego lite（Agent 浏览器）**](https://github.com/citrolabs/ego-lite) | 给 AI Agent 用的浏览器：每个 Agent 独立 Space 并行干活，直接复用你真实的登录状态，不抢你的标签页 | 外部 · CitroLabs · MIT |
 | 🧭 [**find-skills（技能发现）**](#-find-skills技能发现) | 不知道该装哪个 Skill 时，让 Agent 先去开放生态里帮你找、筛、推荐 | 本仓库 |
 | 💬 [**wechat-article-fetcher（公众号文章抓取）**](#-wechat-article-fetcher公众号文章抓取) | 把微信公众号文章抓取、归档并导出为 Markdown，同时保存元数据、截图和图片副本 | 本仓库 |
 | 🧹 [**disk-cleaner（磁盘清理）**](#-disk-cleaner磁盘清理) | C 盘/D 盘爆满时，用 WizTree 扫描 + AI 分析出一份分级清理方案，每项等你批准才动手，删前自动备份可回滚 | 本仓库 · 原作：iziqing · [Source](https://github.com/iziqing/-disk-cleaner) · [MIT Notice](./disk-cleaner/NOTICE) |
@@ -309,6 +310,45 @@ sync up          # English
 </table>
 
 **3. 工具与系统** — 运行环境、磁盘、技能发现等辅助能力
+
+<table>
+<tr><td>
+
+### 🌐 ego lite（Agent 浏览器）
+
+> 外部工具 · CitroLabs · MIT · [Source](https://github.com/citrolabs/ego-lite) · [文档](https://lite.ego.app/document/)
+
+> *"Agent 在自己的 Space 里干活，你在自己的 Space 里浏览。"*
+
+一个给 AI Agent 用的浏览器，不是 Skill。每个 Agent 拿到一个隔离的 Space，在后台并行跑任务，你的标签页和鼠标不受影响；Agent 通过配套的 `ego-browser` Skill 调用它。
+
+**为什么值得用**
+
+- **以代码为本**：把 snapshot、fill、click、wait、navigate、capture 暴露成页内 JavaScript 函数。Agent 写一段代码一次执行完，而不是「调两条命令、看结果、再调两条」，复杂任务更快、更省 token。
+- **多 Space 并行**：同一个浏览器里，Claude Code 和 Codex 可以各跑各的，互不抢控制权。
+- **复用真实登录态**：首次启动可迁移 Chrome 数据，Agent 直接拿到登录状态、Cookie 和扩展。
+- **Snapshot 质量高**：内核级定制，深层嵌套 iframe 也能稳定处理。
+
+**和 Skill 的关系**
+
+它自带 `ego-browser` Skill。安装 app 时会自动写进各个 Agent 的 skills 目录；也可以只装 Skill：`npx skills add citrolabs/ego-lite`。
+
+**适合**
+
+- Agent 要操作真实网站，而你还要同时用电脑
+- 端到端测试、网页抓取、多任务并行
+- 不想把登录态交给云端浏览器
+
+**注意**
+
+- 目前只支持 macOS 和 Windows，Linux 在路线图上
+- 浏览器本体是独立的免费产品，仓库内容 MIT；数据留在本机
+- 官方基准（31 个真实任务）称比同类工具快 47%–63%，属于厂商自测，参考着看
+
+→ [GitHub](https://github.com/citrolabs/ego-lite) · [中文 README](https://github.com/citrolabs/ego-lite/blob/main/README.zh-CN.md) · [文档](https://lite.ego.app/document/)
+
+</td></tr>
+</table>
 
 <table>
 <tr><td>

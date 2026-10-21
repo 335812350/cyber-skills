@@ -76,6 +76,7 @@ This repository collects Skills and Prompts I use for AI-assisted work. Some ent
 
 | Name | One-liner | Notes |
 |---|---|---|
+| 🌐 [**ego lite**](https://github.com/citrolabs/ego-lite) | A browser built for AI agents: each agent gets an isolated Space and runs in parallel, reusing your real logins without hijacking your tabs | External · CitroLabs · MIT |
 | 🧭 [**find-skills**](#-find-skills) | Helps the agent search, vet, and recommend skills from the open ecosystem | This repo |
 | 💬 [**wechat-article-fetcher**](#-wechat-article-fetcher) | Fetches and archives WeChat Official Account articles as Markdown, with metadata, screenshots, and image copies | This repo |
 | 🧹 [**disk-cleaner**](#-disk-cleaner) | When C:/D: is full, scans with WizTree and uses AI analysis to produce a tiered cleanup plan; every item waits for your approval before acting, with automatic backup and rollback | This repo · Original: iziqing · [Source](https://github.com/iziqing/-disk-cleaner) · [MIT Notice](./disk-cleaner/NOTICE) |
@@ -307,6 +308,45 @@ The output is a **typeset PDF research report**, 10,000–30,000 words.
 </table>
 
 **3. Tools & system** — runtime, disk, skill discovery and other utilities
+
+<table>
+<tr><td>
+
+### 🌐 ego lite
+
+> External tool · CitroLabs · MIT · [Source](https://github.com/citrolabs/ego-lite) · [Docs](https://lite.ego.app/document/)
+
+> *"Agents work in their own Space while you browse in yours."*
+
+A browser built for AI agents — not a skill. Each agent gets an isolated Space and runs tasks in the background in parallel, without taking over your tabs or your mouse. Agents drive it through the companion `ego-browser` skill.
+
+**Why it's worth a look**
+
+- **Code-first**: snapshot, fill, click, wait, navigate and capture are exposed as in-page JavaScript functions. The agent writes one script and executes it in a single pass instead of round-tripping CLI commands — faster and cheaper on complex tasks.
+- **Parallel Spaces**: Claude Code and Codex can each run in their own Space in the same browser.
+- **Real logged-in state**: on first launch it can migrate your Chrome data, so agents inherit your sessions, cookies and extensions.
+- **Strong snapshots**: kernel-level customization handles deeply nested iframes that break other tools.
+
+**Relationship to skills**
+
+It ships an `ego-browser` skill, written into each agent's skills directory when you install the app. Or install just the skill: `npx skills add citrolabs/ego-lite`.
+
+**Good for**
+
+- Agents that need real websites while you keep using the machine
+- End-to-end testing, web scraping, parallel tasks
+- Cases where you don't want your sessions in a cloud browser
+
+**Caveats**
+
+- macOS and Windows only; Linux is on the roadmap
+- The browser itself is a separate free product; this repo is MIT, and data stays local
+- The vendor's own benchmark (31 real tasks) claims 47–63% faster than comparable tools — self-reported, treat it as a signal
+
+→ [GitHub](https://github.com/citrolabs/ego-lite) · [README (Chinese)](https://github.com/citrolabs/ego-lite/blob/main/README.zh-CN.md) · [Docs](https://lite.ego.app/document/)
+
+</td></tr>
+</table>
 
 <table>
 <tr><td>
