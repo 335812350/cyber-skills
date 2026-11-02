@@ -81,6 +81,12 @@ This repository collects Skills and Prompts I use for AI-assisted work. Some ent
 | 💬 [**wechat-article-fetcher**](#-wechat-article-fetcher) | Fetches and archives WeChat Official Account articles as Markdown, with metadata, screenshots, and image copies | This repo |
 | 🧹 [**disk-cleaner**](#-disk-cleaner) | When C:/D: is full, scans with WizTree and uses AI analysis to produce a tiered cleanup plan; every item waits for your approval before acting, with automatic backup and rollback | This repo · Original: iziqing · [Source](https://github.com/iziqing/-disk-cleaner) · [MIT Notice](./disk-cleaner/NOTICE) |
 
+**4. Design & branding** — the full brand chain from naming to visual guidelines
+
+| Name | One-liner | Notes |
+|---|---|---|
+| 🎨 [**brand-visual-identity**](#-brand-visual-identity) | Eight skills that chain a complete brand pipeline: naming, moodboard, color, type, icons, visual hierarchy, guidelines | External · SkillMe · MIT · [Source](https://github.com/SkillMedev/brand-visual-identity) |
+
 ### Prompts
 
 | Name | One-liner | Notes |
@@ -101,7 +107,7 @@ Install this skill: https://github.com/335812350/cyber-skills/tree/main/<skill-n
 
 Replace `<skill-name>` with the one you want — e.g. `neat-freak`, `hv-analysis`, `khazix-writer`, `grill-me`, `find-skills`, `wechat-article-fetcher`, `disk-cleaner`, `ai-dev-workflow`. The agent will clone it into the right directory for you.
 
-Skills marked **External** (`think`, `check`, `implement`, `handoff`, `grill-with-docs`, `ponytail`, `humanizer-zh`) are not in this repo — install them from the upstream links in the index so there is only one copy to maintain.
+Skills marked **External** (`think`, `check`, `implement`, `handoff`, `grill-with-docs`, `ponytail`, `humanizer-zh`, `brand-visual-identity`) are not in this repo — install them from the upstream links in the index so there is only one copy to maintain.
 
 ---
 
@@ -449,6 +455,49 @@ When your C: or D: drive is full, the agent scans it with WizTree, runs two laye
 Requires Windows, administrator privileges (for the automatic WizTree scan), and Python. See [SKILL.md](./disk-cleaner/SKILL.md) for the full workflow.
 
 → [SKILL.md](./disk-cleaner/SKILL.md) · [Source](https://github.com/iziqing/-disk-cleaner) · [MIT Notice](./disk-cleaner/NOTICE)
+
+</td></tr>
+</table>
+
+**4. Design & branding** — the full brand chain from naming to visual guidelines
+
+<table>
+<tr><td>
+
+### 🎨 brand-visual-identity
+
+> External skill pack · SkillMe · MIT · [Source](https://github.com/SkillMedev/brand-visual-identity)
+
+> *"An identity that looks intentional from day one."*
+
+An 8-skill pack for founders and brand designers: turns a vague brand idea into an ordered decision chain — naming → moodboard → color → type → icons → hierarchy → guidelines. Each step's output is the next step's input, so you don't need an agency round.
+
+**What's inside**
+
+| Skill | What it does |
+|---|---|
+| `brand-naming` | 20+ name candidates across 5 archetypes, weighted scoring, linguistic and memorability checks |
+| `moodboard-builder` | 8–16 curated images plus a 150–300 word art direction statement arguing one direction |
+| `color-palette-builder` | Accessible palette from one anchor color: role assignments, 9-step tonal scales, 60-30-10 rules |
+| `typography-system` | Typeface pairing and a modular scale: ratio, named roles, line heights, measure limits, responsive values |
+| `icon-system` | Design or audit an icon set: shared grid, stroke, corner language, naming, export pipeline |
+| `logo-brief-writer` | Full creative brief: business context, three-adjective personality axis, deliverables, competitive territory, success criteria |
+| `visual-hierarchy` | Diagnose and fix page hierarchy with ranked levers: size, weight, color, position, whitespace |
+| `brand-guidelines` | Guidelines doc: is/is-not traits, voice principles, tone-by-context matrix, say-this-not-that list |
+
+**Good for**
+
+- Naming a new project or pinning down its visual direction
+- Writing a designer brief that won't be misread, or giving an MVP a deliberate look
+- Turning scattered brand decisions from chat logs into an executable doc
+
+**Caveats**
+
+- Output is specs, briefs and decision docs — it does **not** generate the logo or artwork itself
+- Color and type rules are accessibility-aware, but still review contrast by eye before shipping
+- Install: `npx skills add SkillMedev/brand-visual-identity`, or the connector on skillme.dev
+
+→ [GitHub](https://github.com/SkillMedev/brand-visual-identity) · [SkillMe catalog](https://skillme.dev/browse)
 
 </td></tr>
 </table>

@@ -81,6 +81,12 @@
 | 💬 [**wechat-article-fetcher（公众号文章抓取）**](#-wechat-article-fetcher公众号文章抓取) | 把微信公众号文章抓取、归档并导出为 Markdown，同时保存元数据、截图和图片副本 | 本仓库 |
 | 🧹 [**disk-cleaner（磁盘清理）**](#-disk-cleaner磁盘清理) | C 盘/D 盘爆满时，用 WizTree 扫描 + AI 分析出一份分级清理方案，每项等你批准才动手，删前自动备份可回滚 | 本仓库 · 原作：iziqing · [Source](https://github.com/iziqing/-disk-cleaner) · [MIT Notice](./disk-cleaner/NOTICE) |
 
+**4. 设计与品牌** — 从命名到视觉规范的完整品牌链路
+
+| 名字 | 一句话 | 备注 |
+|---|---|---|
+| 🎨 [**brand-visual-identity（品牌视觉识别包）**](#-brand-visual-identity品牌视觉识别包) | 8 个技能串起完整品牌链路：命名、情绪板、色彩、字体、图标、视觉层级、规范文档 | 外部 · SkillMe · MIT · [Source](https://github.com/SkillMedev/brand-visual-identity) |
+
 ### Prompts
 
 | 名字 | 一句话 | 备注 |
@@ -101,7 +107,7 @@
 
 把 `<skill-name>` 换成你想装的那个，比如 `neat-freak`、`hv-analysis`、`khazix-writer`、`grill-me`、`find-skills`、`wechat-article-fetcher`、`disk-cleaner`、`ai-dev-workflow`。Agent 会自己 clone 到对应目录，不用你操心路径。
 
-标「外部」的技能不在本仓库（`think`、`check`、`implement`、`handoff`、`grill-with-docs`、`ponytail`、`humanizer-zh`），按索引里备注的上游链接安装，避免重复维护。
+标「外部」的技能不在本仓库（`think`、`check`、`implement`、`handoff`、`grill-with-docs`、`ponytail`、`humanizer-zh`、`brand-visual-identity`），按索引里备注的上游链接安装，避免重复维护。
 
 ---
 
@@ -451,6 +457,49 @@ C 盘 / D 盘爆满时，让 Agent 用 WizTree 快速扫描磁盘，再结合模
 需要 Windows、管理员权限（用于 WizTree 自动扫描）和 Python。流程细节见 [SKILL.md](./disk-cleaner/SKILL.md)。
 
 → [SKILL.md](./disk-cleaner/SKILL.md) · [Source](https://github.com/iziqing/-disk-cleaner) · [MIT Notice](./disk-cleaner/NOTICE)
+
+</td></tr>
+</table>
+
+**4. 设计与品牌** — 从命名到视觉规范的完整品牌链路
+
+<table>
+<tr><td>
+
+### 🎨 brand-visual-identity（品牌视觉识别包）
+
+> 外部技能包 · SkillMe · MIT · [Source](https://github.com/SkillMedev/brand-visual-identity)
+
+> *"第一天就让品牌看起来是有意设计的，而不是拼起来的。"*
+
+面向创始人和品牌设计师的 8 技能包：把模糊的品牌想法拆成一条有顺序的决策链——命名 → 情绪板 → 色彩 → 字体 → 图标 → 视觉层级 → 品牌规范文档。每一步的输出直接是下一步的输入，不用花钱找代理商做第一轮。
+
+**包含的技能**
+
+| 技能 | 做什么 |
+|---|---|
+| `brand-naming` | 按 5 种命名原型生成 20+ 候选名，加权打分，做语言和记忆度安全检查 |
+| `moodboard-builder` | 组 8–16 张图的情绪板，附 150–300 字艺术方向陈述，论证一个视觉方向 |
+| `color-palette-builder` | 从锚色出发建无障碍色板：角色分配、9 级色调、60-30-10 配比和使用规则 |
+| `typography-system` | 选/配字体并建模块化字阶：比例、命名角色、行高、行长限制、响应式值 |
+| `icon-system` | 设计或审查图标集：统一网格、描边粗细、圆角语言、命名规范和导出管线 |
+| `logo-brief-writer` | 写完整创意简报：业务背景、三形容词性格轴、交付物、竞品版图、轮次与成功标准 |
+| `visual-hierarchy` | 用排序的杠杆（大小、粗细、颜色、位置、留白）诊断并修复页面视觉层级 |
+| `brand-guidelines` | 写品牌规范文档：性格特征 is/is-not、语气矩阵、say-this-not-that 词表、视觉使用规则 |
+
+**适合**
+
+- 新项目起名字、定视觉方向，或给设计师写一份不会被误解的简报
+- 独立开发者给自己的 MVP 做一套不显得拼凑的品牌皮
+- 把散落在聊天记录里的品牌决策收进一份可执行的规范文档
+
+**注意**
+
+- 产出是规范、简报和决策文档，**不直接生成 logo 图或设计稿**
+- 色板和字体规则对无障碍敏感，但最终落地仍建议人工过一遍对比度
+- 安装：`npx skills add SkillMedev/brand-visual-identity`，或在 [skillme.dev](https://skillme.dev/) 用连接器一键装整套
+
+→ [GitHub](https://github.com/SkillMedev/brand-visual-identity) · [SkillMe 目录](https://skillme.dev/browse)
 
 </td></tr>
 </table>
