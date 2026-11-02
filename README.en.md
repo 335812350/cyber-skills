@@ -476,14 +476,14 @@ An 8-skill pack for founders and brand designers: turns a vague brand idea into 
 
 | Skill | What it does |
 |---|---|
-| `brand-naming` | 20+ name candidates across 5 archetypes, weighted scoring, linguistic and memorability checks |
-| `moodboard-builder` | 8–16 curated images plus a 150–300 word art direction statement arguing one direction |
-| `color-palette-builder` | Accessible palette from one anchor color: role assignments, 9-step tonal scales, 60-30-10 rules |
-| `typography-system` | Typeface pairing and a modular scale: ratio, named roles, line heights, measure limits, responsive values |
-| `icon-system` | Design or audit an icon set: shared grid, stroke, corner language, naming, export pipeline |
-| `logo-brief-writer` | Full creative brief: business context, three-adjective personality axis, deliverables, competitive territory, success criteria |
-| `visual-hierarchy` | Diagnose and fix page hierarchy with ranked levers: size, weight, color, position, whitespace |
-| `brand-guidelines` | Guidelines doc: is/is-not traits, voice principles, tone-by-context matrix, say-this-not-that list |
+| `brand-naming` | Names a company, product or feature. Sets weighted criteria first (distinctive, memorable, pronounceable, meaningful, available, scalable), then generates 20+ candidates across five archetypes: descriptive (Zoom, Slack), invented (Kodak, Xero), evocative (Amazon, Stripe), people names (Dyson, Patagonia), alphanumeric (G2, M1). Scores per criterion without averaging, then runs linguistic checks, read-aloud and a 10-minute recall test; explicitly not a substitute for trademark clearance |
+| `moodboard-builder` | Sets the visual direction before design starts. Writes a 2–3 sentence emotional target first, then curates 8–16 reference images (explicitly not a Pinterest dump) organized by color, texture, light, composition and human presence — plus 3–4 "not this" counter-examples and a 150–300 word art direction statement |
+| `color-palette-builder` | Turns brand colors into a system a developer can implement. One anchor color, primary/secondary/neutral/semantic roles, 9-step tonal scales (anchor at 500), 60-30-10 screen distribution, WCAG AA contrast documented per pair (4.5:1 body, 3:1 large), plus a semantic token layer for dark mode |
+| `typography-system` | Roles before fonts: Display/Heading/Body/UI/Mono, two typefaces at most. Scale ratio picked by product type (1.2 dense UI, 1.25 SaaS default, 1.333 editorial, 1.5 marketing); body line height 1.4–1.6, measure capped at 45–75 characters; responsive values (a 72px hero becomes 40px on mobile) and an anti-pattern list |
+| `icon-system` | Makes an icon set feel like one family: shared grid, stroke weight, corner language and naming; outline and filled are two coordinated sets, not a mix. Delivers a written spec someone who wasn't in the room can execute, plus an audit checklist that catches style drift |
+| `logo-brief-writer` | A complete creative brief for a designer: business context, competitive territory, deliverables, rounds and timeline. Centered on "three adjectives for how the brand feels + three it must never feel", and refuses generic words like "professional" or "modern" |
+| `visual-hierarchy` | Fixes "flat layout where everything competes". Exactly one focal point per view; adjusts size, weight, color, position and whitespace in ranked order. The fix is subtraction, not more contrast |
+| `brand-guidelines` | A brand doc the whole team can execute: is/is-not personality traits, a tone-by-context matrix, a say-this-not-that word list, writing mechanics — all with do/don't examples. "Be friendly" is not a rule; "use contractions, address the reader as 'you', never say leverage" is |
 
 **Good for**
 
